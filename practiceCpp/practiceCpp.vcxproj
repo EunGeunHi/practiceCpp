@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="week1\Chapter1_basic1\train_실습1_2정수배열정렬삽입.cpp" />
+    <ClCompile Include="week1\Chapter1_basic1\train_실습1_3다차원배열.cpp" />
+    <ClCompile Include="week1\Chapter1_basic1\train_실습1_6문자열_c코드.cpp" />
+    <ClCompile Include="week1\Chapter1_basic2\train_실습1_7문자열교체.cpp" />
+    <ClCompile Include="week1\Chapter1_basic2\train_실습1_8스트링토큰처리.cpp" />
+    <ClCompile Include="week1\Chapter1_basic2\train_실습1_9스트링토큰숫자.cpp" />
+    <ClCompile Include="week1\Chapter2_1_pointer\2-1.arr1.cpp" />
+    <ClCompile Include="week1\Chapter2_1_pointer\2-2.pointerArray.cpp" />
+    <ClCompile Include="week1\Chapter2_1_pointer\2-3.pointer_2dimensionArray.cpp" />
+    <ClCompile Include="week1\Chapter2_1_pointer\2-4.pointer_array.cpp" />
+    <ClCompile Include="week1\Chapter2_1_pointer\2-5.배열전달_ptr_to_array.cpp" />
+    <ClCompile Include="week1\Chapter2_2\2장-1.reference.cpp" />
+    <ClCompile Include="week1\Chapter2_2\2장-3.array_pointer.cpp" />
+    <ClCompile Include="week1\Chapter2_2\2장-4.function.cpp" />
+    <ClCompile Include="week1\Chapter2_2\2장-5.swap.cpp" />
+    <ClCompile Include="week1\Chapter2_2\2장-6.swap2.cpp" />
+    <ClCompile Include="week1\Chapter2_3\2-11.ragged.cpp" />
+    <ClCompile Include="week1\Chapter2_3\2-12.char2.cpp" />
+    <ClCompile Include="week1\Chapter2_3\2-6.배열전달_이중포인터.cpp" />
+    <ClCompile Include="week1\Chapter2_3\2-7.배열전달_arraysofpointers.cpp" />
+    <ClCompile Include="week1\Chapter2_3\2-8..increase.cpp" />
+    <ClCompile Include="week2\Chapter2_stringArrayErr\2장-7.static.cpp" />
+    <ClCompile Include="week2\Chapter2_stringArrayErr\2장_실습5_스트링배열_스택오버플로우.cpp" />
+    <ClCompile Include="week2\Chapter2_stringArrayErr\2장_실습6_스트링배ArraysOfPointers.cpp" />
+    <ClCompile Include="week2\Chapter2_stringArrayETC\2장_train10_스트링분리정렬빈도수.cpp" />
+    <ClCompile Include="week2\Chapter2_stringArrayETC\2장_train7_스트링배열이중포인터.cpp" />
+    <ClCompile Include="week2\Chapter2_stringArrayETC\2장_train8_ 구조객체배열정렬.cpp" />
+    <ClCompile Include="week2\Chapter2_stringArrayETC\2장_train9_스트링배열정렬삽입.cpp" />
+    <ClCompile Include="week2\Chapter2_train\2장-8.char_array.cpp" />
+    <ClCompile Include="week2\Chapter2_train\2장_train1_행렬단순연산.cpp" />
+    <ClCompile Include="week2\Chapter2_train\2장_train2_행렬연산반환값.cpp" />
+    <ClCompile Include="week2\Chapter2_train\2장_train3_행렬연산이중포인터.cpp" />
+    <ClCompile Include="week2\Chapter2_train\2장_train4_행렬1차원표현.cpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{79d9a460-2af2-41ac-9319-d0979d2a0d13}</ProjectGuid>
+    <RootNamespace>practiceCpp</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
