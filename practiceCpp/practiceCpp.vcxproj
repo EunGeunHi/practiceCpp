@@ -52,6 +52,18 @@
     <ClCompile Include="week2\Chapter2_train\2장_train2_행렬연산반환값.cpp" />
     <ClCompile Include="week2\Chapter2_train\2장_train3_행렬연산이중포인터.cpp" />
     <ClCompile Include="week2\Chapter2_train\2장_train4_행렬1차원표현.cpp" />
+    <ClCompile Include="week4\교재소스_3_1_포인트struct.cpp" />
+    <ClCompile Include="week4\교재소스_3_2_포인트클래스.cpp" />
+    <ClCompile Include="week4\교재소스_3_3_포인트struct_cpp.cpp" />
+    <ClCompile Include="week4\교재소스_3_4_Date클래스.cpp" />
+    <ClCompile Include="week4\교재소스_3_5_Date클래스2.cpp" />
+    <ClCompile Include="week4\교재소스_3_6_Student클래스.cpp" />
+    <ClCompile Include="week4\실습_3장_1_정수멤버구조체.cpp" />
+    <ClCompile Include="week4\실습_3장_2_구조체_스트링멤버.cpp" />
+    <ClCompile Include="week4\실습_3장_3_객체배열정렬.cpp" />
+    <ClCompile Include="week4\실습_3장_4_행렬struct.cpp" />
+    <ClCompile Include="week4\실습_3장_5_행렬class.cpp" />
+    <ClCompile Include="week4\실습_3장_6_스트링멤버객체배열정렬.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

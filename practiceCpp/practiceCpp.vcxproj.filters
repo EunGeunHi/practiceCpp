@@ -13,136 +13,181 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="소스 파일\week1">
-      <UniqueIdentifier>{38d8dd41-a732-453d-8c0c-ca7d412450c4}</UniqueIdentifier>
+    <Filter Include="소스 파일\test1%28~2%29">
+      <UniqueIdentifier>{4227aa13-54e3-4f14-808d-e3e93c222dc7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\week1\ch1_functionArray">
-      <UniqueIdentifier>{abf479dc-29b5-435d-a08e-ea2aa132cda1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\week1\ch1_string">
-      <UniqueIdentifier>{34f75df1-fe6c-46f3-a56e-c0a4ddd6269a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\week1\ch2_pointer">
-      <UniqueIdentifier>{57668c75-41f0-4e0c-b68d-6d47ff7a047e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\week1\ch2_2">
-      <UniqueIdentifier>{4b9e0b73-8f2e-412d-94ed-c984f32c6b36}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\week1\ch2_3">
-      <UniqueIdentifier>{91ede1bf-5dba-49ba-9f9b-5ff27369987c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\week2">
+    <Filter Include="소스 파일\test1%28~2%29\week2">
       <UniqueIdentifier>{4c926d01-fd2b-4f51-aaa3-c83ae5c3303e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\week2\ch_2_train">
+    <Filter Include="소스 파일\test1%28~2%29\week2\ch_2_train">
       <UniqueIdentifier>{bf96c1f9-da92-4f1a-8517-c5269c0b494f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\week2\ch2_stringArrayETC">
+    <Filter Include="소스 파일\test1%28~2%29\week2\ch2_stringArrayETC">
       <UniqueIdentifier>{2506bbbf-18fc-4c90-8111-4c4765f36aa9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\week2\ch2_stringArraryErr">
+    <Filter Include="소스 파일\test1%28~2%29\week2\ch2_stringArraryErr">
       <UniqueIdentifier>{19b783ea-e396-4ef8-a7c2-449e8b53319a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\test1%28~2%29\week1">
+      <UniqueIdentifier>{38d8dd41-a732-453d-8c0c-ca7d412450c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\test1%28~2%29\week1\ch1_functionArray">
+      <UniqueIdentifier>{abf479dc-29b5-435d-a08e-ea2aa132cda1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\test1%28~2%29\week1\ch1_string">
+      <UniqueIdentifier>{34f75df1-fe6c-46f3-a56e-c0a4ddd6269a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\test1%28~2%29\week1\ch2_pointer">
+      <UniqueIdentifier>{57668c75-41f0-4e0c-b68d-6d47ff7a047e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\test1%28~2%29\week1\ch2_2">
+      <UniqueIdentifier>{4b9e0b73-8f2e-412d-94ed-c984f32c6b36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\test1%28~2%29\week1\ch2_3">
+      <UniqueIdentifier>{91ede1bf-5dba-49ba-9f9b-5ff27369987c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\test2%28~6%29">
+      <UniqueIdentifier>{c29ff38b-4661-47d8-93f2-909faebf319e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\test2%28~6%29\week4">
+      <UniqueIdentifier>{85b23c8e-6431-49f5-91ad-bc81fdcafc4b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="week1\Chapter1_basic1\train_실습1_2정수배열정렬삽입.cpp">
-      <Filter>소스 파일\week1\ch1_functionArray</Filter>
+      <Filter>소스 파일\test1%28~2%29\week1\ch1_functionArray</Filter>
     </ClCompile>
     <ClCompile Include="week1\Chapter1_basic1\train_실습1_3다차원배열.cpp">
-      <Filter>소스 파일\week1\ch1_functionArray</Filter>
+      <Filter>소스 파일\test1%28~2%29\week1\ch1_functionArray</Filter>
     </ClCompile>
     <ClCompile Include="week1\Chapter1_basic1\train_실습1_6문자열_c코드.cpp">
-      <Filter>소스 파일\week1\ch1_functionArray</Filter>
+      <Filter>소스 파일\test1%28~2%29\week1\ch1_functionArray</Filter>
     </ClCompile>
     <ClCompile Include="week1\Chapter1_basic2\train_실습1_7문자열교체.cpp">
-      <Filter>소스 파일\week1\ch1_string</Filter>
+      <Filter>소스 파일\test1%28~2%29\week1\ch1_string</Filter>
     </ClCompile>
     <ClCompile Include="week1\Chapter1_basic2\train_실습1_8스트링토큰처리.cpp">
-      <Filter>소스 파일\week1\ch1_string</Filter>
+      <Filter>소스 파일\test1%28~2%29\week1\ch1_string</Filter>
     </ClCompile>
     <ClCompile Include="week1\Chapter1_basic2\train_실습1_9스트링토큰숫자.cpp">
-      <Filter>소스 파일\week1\ch1_string</Filter>
+      <Filter>소스 파일\test1%28~2%29\week1\ch1_string</Filter>
     </ClCompile>
     <ClCompile Include="week1\Chapter2_1_pointer\2-1.arr1.cpp">
-      <Filter>소스 파일\week1\ch2_pointer</Filter>
+      <Filter>소스 파일\test1%28~2%29\week1\ch2_pointer</Filter>
     </ClCompile>
     <ClCompile Include="week1\Chapter2_1_pointer\2-2.pointerArray.cpp">
-      <Filter>소스 파일\week1\ch2_pointer</Filter>
+      <Filter>소스 파일\test1%28~2%29\week1\ch2_pointer</Filter>
     </ClCompile>
     <ClCompile Include="week1\Chapter2_1_pointer\2-3.pointer_2dimensionArray.cpp">
-      <Filter>소스 파일\week1\ch2_pointer</Filter>
+      <Filter>소스 파일\test1%28~2%29\week1\ch2_pointer</Filter>
     </ClCompile>
     <ClCompile Include="week1\Chapter2_1_pointer\2-4.pointer_array.cpp">
-      <Filter>소스 파일\week1\ch2_pointer</Filter>
+      <Filter>소스 파일\test1%28~2%29\week1\ch2_pointer</Filter>
     </ClCompile>
     <ClCompile Include="week1\Chapter2_1_pointer\2-5.배열전달_ptr_to_array.cpp">
-      <Filter>소스 파일\week1\ch2_pointer</Filter>
+      <Filter>소스 파일\test1%28~2%29\week1\ch2_pointer</Filter>
     </ClCompile>
     <ClCompile Include="week1\Chapter2_2\2장-1.reference.cpp">
-      <Filter>소스 파일\week1\ch2_2</Filter>
+      <Filter>소스 파일\test1%28~2%29\week1\ch2_2</Filter>
     </ClCompile>
     <ClCompile Include="week1\Chapter2_2\2장-3.array_pointer.cpp">
-      <Filter>소스 파일\week1\ch2_2</Filter>
+      <Filter>소스 파일\test1%28~2%29\week1\ch2_2</Filter>
     </ClCompile>
     <ClCompile Include="week1\Chapter2_2\2장-4.function.cpp">
-      <Filter>소스 파일\week1\ch2_2</Filter>
+      <Filter>소스 파일\test1%28~2%29\week1\ch2_2</Filter>
     </ClCompile>
     <ClCompile Include="week1\Chapter2_2\2장-5.swap.cpp">
-      <Filter>소스 파일\week1\ch2_2</Filter>
+      <Filter>소스 파일\test1%28~2%29\week1\ch2_2</Filter>
     </ClCompile>
     <ClCompile Include="week1\Chapter2_2\2장-6.swap2.cpp">
-      <Filter>소스 파일\week1\ch2_2</Filter>
+      <Filter>소스 파일\test1%28~2%29\week1\ch2_2</Filter>
     </ClCompile>
     <ClCompile Include="week1\Chapter2_3\2-6.배열전달_이중포인터.cpp">
-      <Filter>소스 파일\week1\ch2_3</Filter>
+      <Filter>소스 파일\test1%28~2%29\week1\ch2_3</Filter>
     </ClCompile>
     <ClCompile Include="week1\Chapter2_3\2-7.배열전달_arraysofpointers.cpp">
-      <Filter>소스 파일\week1\ch2_3</Filter>
+      <Filter>소스 파일\test1%28~2%29\week1\ch2_3</Filter>
     </ClCompile>
     <ClCompile Include="week1\Chapter2_3\2-8..increase.cpp">
-      <Filter>소스 파일\week1\ch2_3</Filter>
+      <Filter>소스 파일\test1%28~2%29\week1\ch2_3</Filter>
     </ClCompile>
     <ClCompile Include="week1\Chapter2_3\2-11.ragged.cpp">
-      <Filter>소스 파일\week1\ch2_3</Filter>
+      <Filter>소스 파일\test1%28~2%29\week1\ch2_3</Filter>
     </ClCompile>
     <ClCompile Include="week1\Chapter2_3\2-12.char2.cpp">
-      <Filter>소스 파일\week1\ch2_3</Filter>
+      <Filter>소스 파일\test1%28~2%29\week1\ch2_3</Filter>
     </ClCompile>
     <ClCompile Include="week2\Chapter2_train\2장_train1_행렬단순연산.cpp">
-      <Filter>소스 파일\week2\ch_2_train</Filter>
+      <Filter>소스 파일\test1%28~2%29\week2\ch_2_train</Filter>
     </ClCompile>
     <ClCompile Include="week2\Chapter2_train\2장_train2_행렬연산반환값.cpp">
-      <Filter>소스 파일\week2\ch_2_train</Filter>
+      <Filter>소스 파일\test1%28~2%29\week2\ch_2_train</Filter>
     </ClCompile>
     <ClCompile Include="week2\Chapter2_train\2장_train3_행렬연산이중포인터.cpp">
-      <Filter>소스 파일\week2\ch_2_train</Filter>
+      <Filter>소스 파일\test1%28~2%29\week2\ch_2_train</Filter>
     </ClCompile>
     <ClCompile Include="week2\Chapter2_train\2장_train4_행렬1차원표현.cpp">
-      <Filter>소스 파일\week2\ch_2_train</Filter>
+      <Filter>소스 파일\test1%28~2%29\week2\ch_2_train</Filter>
     </ClCompile>
     <ClCompile Include="week2\Chapter2_train\2장-8.char_array.cpp">
-      <Filter>소스 파일\week2\ch_2_train</Filter>
+      <Filter>소스 파일\test1%28~2%29\week2\ch_2_train</Filter>
     </ClCompile>
     <ClCompile Include="week2\Chapter2_stringArrayETC\2장_train7_스트링배열이중포인터.cpp">
-      <Filter>소스 파일\week2\ch2_stringArrayETC</Filter>
+      <Filter>소스 파일\test1%28~2%29\week2\ch2_stringArrayETC</Filter>
     </ClCompile>
     <ClCompile Include="week2\Chapter2_stringArrayETC\2장_train8_ 구조객체배열정렬.cpp">
-      <Filter>소스 파일\week2\ch2_stringArrayETC</Filter>
+      <Filter>소스 파일\test1%28~2%29\week2\ch2_stringArrayETC</Filter>
     </ClCompile>
     <ClCompile Include="week2\Chapter2_stringArrayETC\2장_train9_스트링배열정렬삽입.cpp">
-      <Filter>소스 파일\week2\ch2_stringArrayETC</Filter>
+      <Filter>소스 파일\test1%28~2%29\week2\ch2_stringArrayETC</Filter>
     </ClCompile>
     <ClCompile Include="week2\Chapter2_stringArrayETC\2장_train10_스트링분리정렬빈도수.cpp">
-      <Filter>소스 파일\week2\ch2_stringArrayETC</Filter>
+      <Filter>소스 파일\test1%28~2%29\week2\ch2_stringArrayETC</Filter>
     </ClCompile>
     <ClCompile Include="week2\Chapter2_stringArrayErr\2장_실습5_스트링배열_스택오버플로우.cpp">
-      <Filter>소스 파일\week2\ch2_stringArraryErr</Filter>
+      <Filter>소스 파일\test1%28~2%29\week2\ch2_stringArraryErr</Filter>
     </ClCompile>
     <ClCompile Include="week2\Chapter2_stringArrayErr\2장_실습6_스트링배ArraysOfPointers.cpp">
-      <Filter>소스 파일\week2\ch2_stringArraryErr</Filter>
+      <Filter>소스 파일\test1%28~2%29\week2\ch2_stringArraryErr</Filter>
     </ClCompile>
     <ClCompile Include="week2\Chapter2_stringArrayErr\2장-7.static.cpp">
-      <Filter>소스 파일\week2\ch2_stringArraryErr</Filter>
+      <Filter>소스 파일\test1%28~2%29\week2\ch2_stringArraryErr</Filter>
+    </ClCompile>
+    <ClCompile Include="week4\실습_3장_6_스트링멤버객체배열정렬.cpp">
+      <Filter>소스 파일\test2%28~6%29\week4</Filter>
+    </ClCompile>
+    <ClCompile Include="week4\교재소스_3_1_포인트struct.cpp">
+      <Filter>소스 파일\test2%28~6%29\week4</Filter>
+    </ClCompile>
+    <ClCompile Include="week4\교재소스_3_2_포인트클래스.cpp">
+      <Filter>소스 파일\test2%28~6%29\week4</Filter>
+    </ClCompile>
+    <ClCompile Include="week4\교재소스_3_3_포인트struct_cpp.cpp">
+      <Filter>소스 파일\test2%28~6%29\week4</Filter>
+    </ClCompile>
+    <ClCompile Include="week4\교재소스_3_4_Date클래스.cpp">
+      <Filter>소스 파일\test2%28~6%29\week4</Filter>
+    </ClCompile>
+    <ClCompile Include="week4\교재소스_3_5_Date클래스2.cpp">
+      <Filter>소스 파일\test2%28~6%29\week4</Filter>
+    </ClCompile>
+    <ClCompile Include="week4\교재소스_3_6_Student클래스.cpp">
+      <Filter>소스 파일\test2%28~6%29\week4</Filter>
+    </ClCompile>
+    <ClCompile Include="week4\실습_3장_1_정수멤버구조체.cpp">
+      <Filter>소스 파일\test2%28~6%29\week4</Filter>
+    </ClCompile>
+    <ClCompile Include="week4\실습_3장_2_구조체_스트링멤버.cpp">
+      <Filter>소스 파일\test2%28~6%29\week4</Filter>
+    </ClCompile>
+    <ClCompile Include="week4\실습_3장_3_객체배열정렬.cpp">
+      <Filter>소스 파일\test2%28~6%29\week4</Filter>
+    </ClCompile>
+    <ClCompile Include="week4\실습_3장_4_행렬struct.cpp">
+      <Filter>소스 파일\test2%28~6%29\week4</Filter>
+    </ClCompile>
+    <ClCompile Include="week4\실습_3장_5_행렬class.cpp">
+      <Filter>소스 파일\test2%28~6%29\week4</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
