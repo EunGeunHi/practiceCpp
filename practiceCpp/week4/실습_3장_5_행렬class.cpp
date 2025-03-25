@@ -11,7 +11,7 @@ using namespace std;
 class Matrix {
 public:
 	Matrix(int row, int col) : rows(row), cols(col) { //생성자
-		Term = new int[row * col];
+		//Term = new int[row * col];//GetData에서 할당하기에
 	}
 	Matrix(const Matrix&);//복사 생성자
 	~Matrix() { delete[]Term; } //소멸자가 add()에서 호출되어 할당된 배열을 반환하여 런타임 오류가 발생함 

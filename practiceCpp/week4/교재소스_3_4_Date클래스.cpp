@@ -3,7 +3,7 @@
 // class Date의 모든 interface 정의 
 #ifndef date2_h
 class Date {
-    // private 데이터
+// private //private 데이터-> 디폴트라서 안붙여두면 기본적으로 private
     int month;
     int day;
     int year;
@@ -11,7 +11,7 @@ class Date {
 public:
     // day, month, year로 한 날짜를 생성
     Date(int m, int d, int y);    // "표준" 생성자
-    Date();    // default 생성자 
+    Date();    // default 생성자, 파라미터가 없음
     // 날짜 d 이후의 nn일이 지난 날짜를 생성
     Date(class Date d, int nn);
     // 다음 함수들은 또 다른 생성자 Date(Date d, int nn)에서
@@ -27,4 +27,28 @@ public:
     void PrintDate();    // 날짜를 출력함
     void PrintLeap();    // 금년이 윤년인지 아닌지를 기술하는 문구를 출력
 };
+/*
+Date::Date(int m, int d, int y) : month(m), day(d), year(y){
+    // month = m;
+    // day = d;
+    // year = y; 
+}
+Date::Date(){ //컴파일러가 new에 의해 메모리 자동할당하고 디폴트로 초기화
+    
+    month =3;
+    day = 25;
+    year = 2025;
+    
+
+    } //!!Overloading,Overring,상속,표적바인딩!!
+
+
+//test 용
+void main(){
+    Datd d; //디폴트 생성자 
+    Datd d1 = {3,25,2025};
+    Date d2 (3,25,2025);
+}
+
+*/
 #endif

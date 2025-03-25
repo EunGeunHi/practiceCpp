@@ -1,3 +1,4 @@
+/*수업순서: 실습->교재*/
 //C 언어의 struct 사용
 // struct을 사용한 좌표 객체 표현
 #include <stdio.h>
@@ -12,7 +13,7 @@ int main() {
     // struct 변수 선언
     struct Point p1;
 
-    // struct 멤버 값을 초기화
+    // struct 멤버 값을 초기화-> 구조체는 public
     p1.x = 5;
     p1.y = 10;
 
@@ -21,5 +22,3 @@ int main() {
 
     return 0;
 }
-
-//커밋테스트1

@@ -26,7 +26,8 @@ int main()
 	struct Matrix a = { 2,3,0 }, b = { 2,3,0 }, c = { 2,3,0 }, d = { 3,4,0 }, e = { 2,4,0 };
 	srand(42);
 	printf("matrix a[2][3]의 입력: \n");
-	getData(&a);
+	getData(&a);//call by point
+	//getData(a);의 경우 call by value-> 값 복사, 받는 함수 경우 포인터로 못받고 단순 변수로 받게됨
 	showData(&a);
 	printf("matrix b[2][3]의 입력: \n");
 	getData(&b);
@@ -46,9 +47,10 @@ int main()
 	system("pause");
 	return 0;
 }
-int getData(struct Matrix* a) {
+int getData(struct Matrix* a) {//!!paramter passing!! eg)struct Matrix* p = &a;(함수 콜) 
 	int rows = a->rows; int cols = a->cols;
-	a->Term = (int*)calloc(rows * cols, sizeof(int));
+	a->Term = (int*)calloc(rows * cols, sizeof(int)); //heap에 메모리 할당, 후 시작 주소 리턴
+	//!!메모리 할당하는 이유!!, calloc과 malloc차이
 
 	return 0;
 }

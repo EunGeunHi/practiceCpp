@@ -14,7 +14,13 @@ struct Rectangle {
 
 
 int compareRectangles(const Rectangle* a, const Rectangle* b) {
-    return (a->leftBottomX - b->leftBottomX);
+    int x_compare = a->leftBottomX - b->leftBottomX;
+    if(x_compare != 0)
+        return x_compare;
+    else if()
+    /*
+    * 1순위 x좌표 > y > width > height > name 비교
+    */
 }
 void showRectangle(struct Rectangle r) {
     printf("[%d, %d, %d, %d, %s]\n", r.leftBottomX, r.leftBottomY, r.width, r.height, r.name);
@@ -62,3 +68,13 @@ int main(void) {
     system("pause");
     return 0;
 }
+
+/* 차이 알기
+int a = b;
+char *s ="hello";
+char *t;
+
+1.  t=s
+2.  strcpy(t,s)
+3.  strdup(t,s)
+*/

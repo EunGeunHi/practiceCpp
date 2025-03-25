@@ -77,3 +77,10 @@ int main() {
     system("pause");
     return 0;
 }
+
+
+
+/*
+struct Student{};   //C
+Class Student{};    //Cpp
+*/
