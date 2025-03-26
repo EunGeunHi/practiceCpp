@@ -23,7 +23,7 @@ typedef struct Rectangle {
 //기본적인 C 언어 문법에서는 struct Rectangle를 반드시 써야
 int compareRectangles(const Rectangle* a, const Rectangle* b) {
     return (a->leftBottomX - b->leftBottomX);
-}
+} 
 void showRectangle(struct Rectangle r) {
     printf("[%d, %d, %d, %d]\n", r.leftBottomX, r.leftBottomY, r.width, r.height);
 }

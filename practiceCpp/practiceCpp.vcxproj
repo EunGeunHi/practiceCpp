@@ -64,6 +64,8 @@
     <ClCompile Include="week4\실습_3장_4_행렬struct.cpp" />
     <ClCompile Include="week4\실습_3장_5_행렬class.cpp" />
     <ClCompile Include="week4\실습_3장_6_스트링멤버객체배열정렬.cpp" />
+    <ClCompile Include="실습_3장_1.cpp" />
+    <ClCompile Include="실습_3장_2.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
