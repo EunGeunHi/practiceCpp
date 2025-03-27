@@ -5,14 +5,15 @@ using namespace std;
 #define COLS 5
 
 // 배열을 참조로 받아 수정하는 함수
-void update(int* const& rfrn) {
+void update(int* const& rfrn) { //void update(int* const p)와 비교
     /*
     * int* const&: const&: 참조로 전달하며 참조 자체는 변경할 수 없다.
     * int* const: 포인터 p가 가리키는 주소는 변경할 수 없다.
     * 함수 안에서 p = 다른 주소; 같은 코드는 금지되어 안전
     */
-    rfrn[0] = 100;
-    rfrn[1] = 200;
+    rfrn[0] = 100;  //*rfrn = 100;
+    rfrn[1] = 200;  //*(rfrn+1) = 100;
+    // 즉 포인터처럼 쓴다
 }
 
 int main() {

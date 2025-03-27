@@ -53,8 +53,8 @@ Student::~Student() {
         free(city);
     }
 }
-void Student::swap(Student* b) {
-    std::swap(name, b->name);
+void Student::swap(Student* b) {    // !!pointer로 swap!!
+    std::swap(name, b->name);       // strcpy로 하면 err, 
     std::swap(age, b->age);
     std::swap(city, b->city);
 }
@@ -80,15 +80,15 @@ void selectionSortStudents(Student* students[], int numStudents) {
 
             }
         }
-        if (minIndex != i) {
-            students[i]->swap(students[minIndex]);
+        if (minIndex != i) {    
+            students[i]->swap(students[minIndex]);      // !!유의!!
         }
     }
 }
 int main() {
     // 학생 객체 초기화
     int numStudents = 5;
-    Student student1("Hong Gildong", 23, "houston");
+    Student student1("Hong Gildong", 23, "houston");        //"Hong Gildong"은 data영역.rodata : const  //printf("%p", &"Hong Gildong");
     Student student2("hello", 22, "newyork");
     Student student3("houston", 13, "houston");
     Student student4("hong", 19, "busan");

@@ -3,6 +3,7 @@
 using namespace std;
 
 class Person{
+    //ostream¿« ∞¥√º : cout
 	/*
     ostream& operator<<(char); 
     ostream& operator<<(short);

@@ -11,15 +11,15 @@ int show2(int(*t)[COLS], int row);//pointer-to-array
 void main(void){
 	int num[2][3] ={{1, 2, 3}, {4, 5, 6}};
 	cout<<"times()::"<<endl;
-	int total = times(num, 2);
+	int total = times(num, 2);	//call by value: 배열 시작 주소를 값으로 넘김
 	show(num, 2);
 	cout << "toal = " << total << endl;
 	cout<<"times2()::"<<endl;
-	times2(num, 2);
+	times2(num, 2);				// 포인터로 넘김
 	show2(num, 2);
 	system("pause");
 }
-int times(int (&t)[ROWS][COLS], int row)//how to pass 2D array as reference
+int times(int (&t)[ROWS][COLS], int row)//how to pass 2D array as reference	// 2차원 배열 가르키는 참조변수가 파라미터
 {
 	int total = 0;
 	for (int i = 0; i < row; i++)
@@ -32,7 +32,7 @@ int times(int (&t)[ROWS][COLS], int row)//how to pass 2D array as reference
 	}
 	return total;
 }
-int times2(int (*t)[COLS], int row)//how to pass 2D array as pointer
+int times2(int (*t)[COLS], int row)//how to pass 2D array as pointer	//포인터로 받음
 {
 	int total = 0;
 	for (int i = 0; i < row; i++)
