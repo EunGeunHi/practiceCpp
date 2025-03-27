@@ -64,6 +64,24 @@
     <ClCompile Include="week4\실습_3장_4_행렬struct.cpp" />
     <ClCompile Include="week4\실습_3장_5_행렬class.cpp" />
     <ClCompile Include="week4\실습_3장_6_스트링멤버객체배열정렬.cpp" />
+    <ClCompile Include="week5\4장_10_returnByPointer.cpp" />
+    <ClCompile Include="week5\4장_11_returnBy값_복소수.cpp" />
+    <ClCompile Include="week5\4장_12_returnby참조_복소수.cpp" />
+    <ClCompile Include="week5\4장_13_returnBY참조_sideeffects.cpp" />
+    <ClCompile Include="week5\4장_14_returnBy참조_복소수.cpp" />
+    <ClCompile Include="week5\4장_15_타입변환.cpp" />
+    <ClCompile Include="week5\4장_16_dynamic_cast.cpp" />
+    <ClCompile Include="week5\4장_17_static_cast사용예제.cpp" />
+    <ClCompile Include="week5\4장_18_ostream.cpp" />
+    <ClCompile Include="week5\4장_1_static_linkage.cpp" />
+    <ClCompile Include="week5\4장_2_스트림_IN_OUT.cpp" />
+    <ClCompile Include="week5\4장_3_const변수.cpp" />
+    <ClCompile Include="week5\4장_4_const사용함수.cpp" />
+    <ClCompile Include="week5\4장_5_참조전달.cpp" />
+    <ClCompile Include="week5\4장_6_reference_variable.cpp" />
+    <ClCompile Include="week5\4장_7_passByReference.cpp" />
+    <ClCompile Include="week5\4장_8_참조변수swap함수.cpp" />
+    <ClCompile Include="week5\4장_9_returnByReference.cpp" />
     <ClCompile Include="실습_3장_1.cpp" />
     <ClCompile Include="실습_3장_2.cpp" />
   </ItemGroup>
