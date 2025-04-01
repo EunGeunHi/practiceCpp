@@ -64,6 +64,16 @@
     <ClCompile Include="week4\실습_3장_4_행렬struct.cpp" />
     <ClCompile Include="week4\실습_3장_5_행렬class.cpp" />
     <ClCompile Include="week4\실습_3장_6_스트링멤버객체배열정렬.cpp" />
+    <ClCompile Include="week5-1\5장_10_string클래스.cpp" />
+    <ClCompile Include="week5-1\5장_1_default 생성자클래스.cpp" />
+    <ClCompile Include="week5-1\5장_2_생성자클래스.cpp" />
+    <ClCompile Include="week5-1\5장_3_클래스private.cpp" />
+    <ClCompile Include="week5-1\5장_4_this포인터.cpp" />
+    <ClCompile Include="week5-1\5장_5_복사생성자.cpp" />
+    <ClCompile Include="week5-1\5장_6_deep_copy.cpp" />
+    <ClCompile Include="week5-1\5장_7_포인터변수객체.cpp" />
+    <ClCompile Include="week5-1\5장_8_포인터변수_클래스상속.cpp" />
+    <ClCompile Include="week5-1\5장_9_클래스변수메소드.cpp" />
     <ClCompile Include="week5\4장_10_returnByPointer.cpp" />
     <ClCompile Include="week5\4장_11_returnBy값_복소수.cpp" />
     <ClCompile Include="week5\4장_12_returnby참조_복소수.cpp" />
