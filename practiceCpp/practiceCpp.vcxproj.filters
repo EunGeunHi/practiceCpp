@@ -52,14 +52,17 @@
     <Filter Include="소스 파일\test2%28~6%29\week4">
       <UniqueIdentifier>{85b23c8e-6431-49f5-91ad-bc81fdcafc4b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\test2%28~6%29\week4-2">
-      <UniqueIdentifier>{aebe5f1b-a506-4713-ac36-8a6f8c87e16a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\test2%28~6%29\week5-1">
-      <UniqueIdentifier>{6cc077a0-ccc3-44da-9927-ec2a737c4e83}</UniqueIdentifier>
-    </Filter>
     <Filter Include="소스 파일\test2%28~6%29\train">
       <UniqueIdentifier>{101dc89b-c826-4268-8b7a-71ef5e78aa2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\test2%28~6%29\week5-2">
+      <UniqueIdentifier>{6cc077a0-ccc3-44da-9927-ec2a737c4e83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\test2%28~6%29\week4-2">
+      <UniqueIdentifier>{6b469d63-a0c1-42ca-aa66-e5854f77a918}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\test2%28~6%29\week5-1">
+      <UniqueIdentifier>{aebe5f1b-a506-4713-ac36-8a6f8c87e16a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -198,60 +201,6 @@
     <ClCompile Include="week4\실습_3장_5_행렬class.cpp">
       <Filter>소스 파일\test2%28~6%29\week4</Filter>
     </ClCompile>
-    <ClCompile Include="week5\4장_1_static_linkage.cpp">
-      <Filter>소스 파일\test2%28~6%29\week4-2</Filter>
-    </ClCompile>
-    <ClCompile Include="week5\4장_2_스트림_IN_OUT.cpp">
-      <Filter>소스 파일\test2%28~6%29\week4-2</Filter>
-    </ClCompile>
-    <ClCompile Include="week5\4장_3_const변수.cpp">
-      <Filter>소스 파일\test2%28~6%29\week4-2</Filter>
-    </ClCompile>
-    <ClCompile Include="week5\4장_4_const사용함수.cpp">
-      <Filter>소스 파일\test2%28~6%29\week4-2</Filter>
-    </ClCompile>
-    <ClCompile Include="week5\4장_5_참조전달.cpp">
-      <Filter>소스 파일\test2%28~6%29\week4-2</Filter>
-    </ClCompile>
-    <ClCompile Include="week5\4장_6_reference_variable.cpp">
-      <Filter>소스 파일\test2%28~6%29\week4-2</Filter>
-    </ClCompile>
-    <ClCompile Include="week5\4장_7_passByReference.cpp">
-      <Filter>소스 파일\test2%28~6%29\week4-2</Filter>
-    </ClCompile>
-    <ClCompile Include="week5\4장_8_참조변수swap함수.cpp">
-      <Filter>소스 파일\test2%28~6%29\week4-2</Filter>
-    </ClCompile>
-    <ClCompile Include="week5\4장_9_returnByReference.cpp">
-      <Filter>소스 파일\test2%28~6%29\week4-2</Filter>
-    </ClCompile>
-    <ClCompile Include="week5\4장_10_returnByPointer.cpp">
-      <Filter>소스 파일\test2%28~6%29\week4-2</Filter>
-    </ClCompile>
-    <ClCompile Include="week5\4장_11_returnBy값_복소수.cpp">
-      <Filter>소스 파일\test2%28~6%29\week4-2</Filter>
-    </ClCompile>
-    <ClCompile Include="week5\4장_12_returnby참조_복소수.cpp">
-      <Filter>소스 파일\test2%28~6%29\week4-2</Filter>
-    </ClCompile>
-    <ClCompile Include="week5\4장_13_returnBY참조_sideeffects.cpp">
-      <Filter>소스 파일\test2%28~6%29\week4-2</Filter>
-    </ClCompile>
-    <ClCompile Include="week5\4장_14_returnBy참조_복소수.cpp">
-      <Filter>소스 파일\test2%28~6%29\week4-2</Filter>
-    </ClCompile>
-    <ClCompile Include="week5\4장_15_타입변환.cpp">
-      <Filter>소스 파일\test2%28~6%29\week4-2</Filter>
-    </ClCompile>
-    <ClCompile Include="week5\4장_16_dynamic_cast.cpp">
-      <Filter>소스 파일\test2%28~6%29\week4-2</Filter>
-    </ClCompile>
-    <ClCompile Include="week5\4장_17_static_cast사용예제.cpp">
-      <Filter>소스 파일\test2%28~6%29\week4-2</Filter>
-    </ClCompile>
-    <ClCompile Include="week5\4장_18_ostream.cpp">
-      <Filter>소스 파일\test2%28~6%29\week4-2</Filter>
-    </ClCompile>
     <ClCompile Include="실습_3장_1.cpp">
       <Filter>소스 파일\test2%28~6%29\train</Filter>
     </ClCompile>
@@ -259,34 +208,88 @@
       <Filter>소스 파일\test2%28~6%29\train</Filter>
     </ClCompile>
     <ClCompile Include="week5-1\5장_1_default 생성자클래스.cpp">
-      <Filter>소스 파일\test2%28~6%29\week5-1</Filter>
+      <Filter>소스 파일\test2%28~6%29\week5-2</Filter>
     </ClCompile>
     <ClCompile Include="week5-1\5장_2_생성자클래스.cpp">
-      <Filter>소스 파일\test2%28~6%29\week5-1</Filter>
+      <Filter>소스 파일\test2%28~6%29\week5-2</Filter>
     </ClCompile>
     <ClCompile Include="week5-1\5장_3_클래스private.cpp">
-      <Filter>소스 파일\test2%28~6%29\week5-1</Filter>
+      <Filter>소스 파일\test2%28~6%29\week5-2</Filter>
     </ClCompile>
     <ClCompile Include="week5-1\5장_4_this포인터.cpp">
-      <Filter>소스 파일\test2%28~6%29\week5-1</Filter>
+      <Filter>소스 파일\test2%28~6%29\week5-2</Filter>
     </ClCompile>
     <ClCompile Include="week5-1\5장_5_복사생성자.cpp">
-      <Filter>소스 파일\test2%28~6%29\week5-1</Filter>
+      <Filter>소스 파일\test2%28~6%29\week5-2</Filter>
     </ClCompile>
     <ClCompile Include="week5-1\5장_6_deep_copy.cpp">
+      <Filter>소스 파일\test2%28~6%29\week5-2</Filter>
+    </ClCompile>
+    <ClCompile Include="week4-2\4장_14_returnBy참조_복소수.cpp">
+      <Filter>소스 파일\test2%28~6%29\week4-2</Filter>
+    </ClCompile>
+    <ClCompile Include="week4-2\4장_1_static_linkage.cpp">
+      <Filter>소스 파일\test2%28~6%29\week4-2</Filter>
+    </ClCompile>
+    <ClCompile Include="week4-2\4장_2_스트림_IN_OUT.cpp">
+      <Filter>소스 파일\test2%28~6%29\week4-2</Filter>
+    </ClCompile>
+    <ClCompile Include="week4-2\4장_3_const변수.cpp">
+      <Filter>소스 파일\test2%28~6%29\week4-2</Filter>
+    </ClCompile>
+    <ClCompile Include="week4-2\4장_4_const사용함수.cpp">
+      <Filter>소스 파일\test2%28~6%29\week4-2</Filter>
+    </ClCompile>
+    <ClCompile Include="week4-2\4장_5_참조전달.cpp">
+      <Filter>소스 파일\test2%28~6%29\week4-2</Filter>
+    </ClCompile>
+    <ClCompile Include="week4-2\4장_6_reference_variable.cpp">
+      <Filter>소스 파일\test2%28~6%29\week4-2</Filter>
+    </ClCompile>
+    <ClCompile Include="week4-2\4장_7_passByReference.cpp">
+      <Filter>소스 파일\test2%28~6%29\week4-2</Filter>
+    </ClCompile>
+    <ClCompile Include="week4-2\4장_8_참조변수swap함수.cpp">
+      <Filter>소스 파일\test2%28~6%29\week4-2</Filter>
+    </ClCompile>
+    <ClCompile Include="week4-2\4장_9_returnByReference.cpp">
+      <Filter>소스 파일\test2%28~6%29\week4-2</Filter>
+    </ClCompile>
+    <ClCompile Include="week4-2\4장_10_returnByPointer.cpp">
+      <Filter>소스 파일\test2%28~6%29\week4-2</Filter>
+    </ClCompile>
+    <ClCompile Include="week4-2\4장_11_returnBy값_복소수.cpp">
+      <Filter>소스 파일\test2%28~6%29\week4-2</Filter>
+    </ClCompile>
+    <ClCompile Include="week4-2\4장_12_returnby참조_복소수.cpp">
+      <Filter>소스 파일\test2%28~6%29\week4-2</Filter>
+    </ClCompile>
+    <ClCompile Include="week4-2\4장_13_returnBY참조_sideeffects.cpp">
+      <Filter>소스 파일\test2%28~6%29\week4-2</Filter>
+    </ClCompile>
+    <ClCompile Include="week4-2\4장_15_타입변환.cpp">
+      <Filter>소스 파일\test2%28~6%29\week5-1</Filter>
+    </ClCompile>
+    <ClCompile Include="week4-2\4장_16_dynamic_cast.cpp">
+      <Filter>소스 파일\test2%28~6%29\week5-1</Filter>
+    </ClCompile>
+    <ClCompile Include="week4-2\4장_17_static_cast사용예제.cpp">
+      <Filter>소스 파일\test2%28~6%29\week5-1</Filter>
+    </ClCompile>
+    <ClCompile Include="week4-2\4장_18_ostream.cpp">
       <Filter>소스 파일\test2%28~6%29\week5-1</Filter>
     </ClCompile>
     <ClCompile Include="week5-1\5장_7_포인터변수객체.cpp">
-      <Filter>소스 파일\test2%28~6%29\week5-1</Filter>
+      <Filter>소스 파일\test2%28~6%29</Filter>
     </ClCompile>
     <ClCompile Include="week5-1\5장_8_포인터변수_클래스상속.cpp">
-      <Filter>소스 파일\test2%28~6%29\week5-1</Filter>
+      <Filter>소스 파일\test2%28~6%29</Filter>
     </ClCompile>
     <ClCompile Include="week5-1\5장_9_클래스변수메소드.cpp">
-      <Filter>소스 파일\test2%28~6%29\week5-1</Filter>
+      <Filter>소스 파일\test2%28~6%29</Filter>
     </ClCompile>
     <ClCompile Include="week5-1\5장_10_string클래스.cpp">
-      <Filter>소스 파일\test2%28~6%29\week5-1</Filter>
+      <Filter>소스 파일\test2%28~6%29</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

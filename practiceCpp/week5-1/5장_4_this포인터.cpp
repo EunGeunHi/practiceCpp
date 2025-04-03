@@ -5,7 +5,7 @@ using namespace std;
 
 class Car {
 private:
-    string manufacturer;
+    string manufacturer;    //char* manufacturer 과 차이점 
     int speed;
 
 public:

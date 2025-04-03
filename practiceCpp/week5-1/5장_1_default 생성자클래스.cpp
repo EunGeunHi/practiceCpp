@@ -6,7 +6,8 @@ using namespace std;
 // 자동차 클래스 (매우 단순한 버전)
 class Car {
 public:
-    char * manufacturer; // 제조사
+    char * manufacturer; // 제조사 
+    //1. char* manu; 2.char manu[10]; 3.string manu; 차이
     char * model;        // 모델명
     double weight;       // 차중량 (kg)
     int length;          // 전장(mm)

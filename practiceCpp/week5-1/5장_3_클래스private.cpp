@@ -49,7 +49,7 @@ public:
 
 // 积己磊 沥狼
 Car::Car(const char* m, const char* mod, double w, int l, int wdt, int s) {
-    strncpy(manufacturer, m, sizeof(manufacturer) - 1);
+    strncpy(manufacturer, m, sizeof(manufacturer) - 1);// char* manufacturer;老 版快 manufac = malloc();
     manufacturer[sizeof(manufacturer) - 1] = '\0';
     strncpy(model, mod, sizeof(model) - 1);
     model[sizeof(model) - 1] = '\0';

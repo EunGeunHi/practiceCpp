@@ -9,7 +9,9 @@ private:
 public:
     // 기본 생성자 (Default Constructor)
     Car() {
-        manufacturer = "Unknown";
+        //
+        // manufacturer = "Unknown"; //manufacturer = &"Unknown";로 컴파일러가 인식
+        manufacturer = strdup("Unknown");
         speed = 0;
         cout << "Default Constructor 호출" << endl;
     }

@@ -15,10 +15,8 @@ public:
 
     // 생성자 선언
     Car(char* m, char* mod, double w, int l, int wdt, int s);
-    Car() {
-        manufacturer = nullptr;
-
-    }
+    Car(char* m, char* mod);
+    Car();
     // 전장 기준으로 차급 세그먼트 분류 (함수 선언)
     char* getSegment();
 
@@ -37,13 +35,20 @@ public:
 // =============================
 
 // 생성자 정의
+Car::Car() {
+    manufacturer = nullptr;
+}
+Car::Car(char* m, char* mod) {
+    manufacturer = m;
+    model = mod;
+}
 Car::Car(char* m, char* mod, double w, int l, int wdt, int s)
     : manufacturer(m), model(mod), weight(w), length(l), width(wdt), speed(s) {}
 
 // 전장 기준으로 차급 세그먼트 분류 (함수 구현)
 char* Car::getSegment() {
     if (length < 4200)
-        return "B-세그먼트 (소형차)";
+        return strdup("B-세그먼트 (소형차)");
     else if (length < 4600)
         return "C-세그먼트 (준중형, 소형 패밀리카)";
     else if (length < 4900)
