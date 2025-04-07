@@ -291,5 +291,8 @@
     <ClCompile Include="week5-1\5장_10_string클래스.cpp">
       <Filter>소스 파일\test2%28~6%29</Filter>
     </ClCompile>
+    <ClCompile Include="실습_3장_4.cpp">
+      <Filter>소스 파일\test2%28~6%29\train</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <string.h>
 
 class Student {
 private:

@@ -17,7 +17,7 @@ int compareRectangles(const struct Rectangle* a, const struct Rectangle* b) {
 void showRectangle(struct Rectangle r) {
     printf("[%d, %d, %d, %d]\n", r.leftBottomX, r.leftBottomY, r.width, r.height);
 }
-void showRectangles(char* message, struct Rectangle* rectangles[], int numRectangles) { // const char* message?
+void showRectangles(const char* message, struct Rectangle* rectangles[], int numRectangles) { // const char* message?
     printf("%s\n", message);
     for (int i = 0; i < numRectangles; i++)
         showRectangle(*rectangles[i]);//rectangles[i]은 주소값, showRectangle()은 파라미터로 값을 요구

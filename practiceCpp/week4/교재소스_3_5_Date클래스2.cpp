@@ -1,6 +1,8 @@
 // class Date의 두 번째 정의
 // 새로운 함수가 포함됨
 #include  <iostream>
+using namespace std;
+
 class Date{
     // private data
     int month;
@@ -8,7 +10,7 @@ class Date{
     int year;
 public:
     Date (int m, int d, int y) : month (m), day (d), year (y){
-        if (month == 2 && day == 29) cout << “incorrect date”<<endl;  
+        if (month == 2 && day == 29) cout << "incorrect date" << endl;
     }
     Date (){
     // compiler는 미 정의된 내부 데이터 member에 0을 치환
@@ -74,7 +76,7 @@ public:
         }
         // 날짜를 출력한다
         void PrintDate (){
-            cout << endl << "Date : " << month << "/" << day                   << "/"  << year <<endl;
+            cout << endl << "Date : " << month << "/" << day << "/"  << year <<endl;
         }
 
         // 연도가 윤년인지 아닌지를 가리키는 문구를 출력한다

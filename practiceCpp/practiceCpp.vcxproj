@@ -94,6 +94,7 @@
     <ClCompile Include="week5-1\5장_9_클래스변수메소드.cpp" />
     <ClCompile Include="실습_3장_1.cpp" />
     <ClCompile Include="실습_3장_2.cpp" />
+    <ClCompile Include="실습_3장_4.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
