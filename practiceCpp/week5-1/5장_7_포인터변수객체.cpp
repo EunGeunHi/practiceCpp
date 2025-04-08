@@ -80,14 +80,14 @@ int main() {
     delete car3;
 
     //난이도 상 - 고급과정
-    Car* carSet = new Car[10]; //10개의 객체를 생성 - Car()를 호출
+    Car* carSet = new Car[10]; //10개의 객체를 생성 - Car()를 호출 //기본 생성자를 만들어둬야 가능 //point of array->포인터 하나
     carSet[0].setManufacturer("Toyota");
     carSet[1].setSpeed(120);
     carSet[2].printCarInfo();
 
     //Car* carSet = new Car[10]("Hyundai", 100); // 에러
 
-    Car* carSet2[10];
+    Car* carSet2[10];   //array of pointer->포인터 여러개
     for (int i = 0; i < 10; ++i) {
         carSet2[i] = new Car("Hyundai", 100 + i * 10); // 각각 생성자 호출
     }
@@ -100,3 +100,5 @@ int main() {
 
     return 0;
 }
+
+//Car carSet3[10];같은 경우 stack에 너무큰 공간 사용.피해야할 코드

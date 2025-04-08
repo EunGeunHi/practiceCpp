@@ -5,13 +5,13 @@ using namespace std;
 
 class Car {
 private:
-    char* manufacturer;
+    char* manufacturer; //인스턴스 변수-> 객체의 변수
     int speed;
 
-    static int count;
+    static int count; //클래스 변수-> 객체들간에 공유하는 변수,객체가 없어도 존재
 
 public:
-    static int getCarCount() {
+    static int getCarCount() {  //클래스 메소드
         return count;
     }
 
@@ -45,7 +45,7 @@ public:
         --count;
     }
 
-    Car& setManufacturer(const char* manufacturer) {
+    Car& setManufacturer(const char* manufacturer) { //인스턴스 메소드
         delete[] this->manufacturer;
         this->manufacturer = new char[strlen(manufacturer) + 1];
         strcpy(this->manufacturer, manufacturer);
@@ -64,7 +64,7 @@ public:
     }
 };
 
-int Car::count = 0;
+int Car::count = 0; //int count =0;과는 다름 //메인 시작전에 초기화. 예외적으로 private를 외부에서 허용
 
 // ===================== main =====================
 int main() {
