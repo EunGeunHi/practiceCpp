@@ -64,6 +64,9 @@
     <Filter Include="소스 파일\test2%28~6%29\week5-1">
       <UniqueIdentifier>{aebe5f1b-a506-4713-ac36-8a6f8c87e16a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\test2%28~6%29\lab">
+      <UniqueIdentifier>{b66f44e7-63f1-4759-8816-9b58a621eff4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="week1\Chapter1_basic1\train_실습1_2정수배열정렬삽입.cpp">
@@ -293,6 +296,24 @@
     </ClCompile>
     <ClCompile Include="실습_3장_4.cpp">
       <Filter>소스 파일\test2%28~6%29\train</Filter>
+    </ClCompile>
+    <ClCompile Include="lab.cpp">
+      <Filter>소스 파일\test2%28~6%29\lab</Filter>
+    </ClCompile>
+    <ClCompile Include="lab_1.cpp">
+      <Filter>소스 파일\test2%28~6%29\lab</Filter>
+    </ClCompile>
+    <ClCompile Include="lab_2.cpp">
+      <Filter>소스 파일\test2%28~6%29\lab</Filter>
+    </ClCompile>
+    <ClCompile Include="lab_3.cpp">
+      <Filter>소스 파일\test2%28~6%29\lab</Filter>
+    </ClCompile>
+    <ClCompile Include="lab_3_1.cpp">
+      <Filter>소스 파일\test2%28~6%29\lab</Filter>
+    </ClCompile>
+    <ClCompile Include="lab_4.cpp">
+      <Filter>소스 파일\test2%28~6%29\lab</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
