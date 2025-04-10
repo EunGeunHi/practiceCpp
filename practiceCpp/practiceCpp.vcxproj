@@ -25,6 +25,7 @@
     <ClCompile Include="lab_3.cpp" />
     <ClCompile Include="lab_3_1.cpp" />
     <ClCompile Include="lab_4.cpp" />
+    <ClCompile Include="lab_4_1.cpp" />
     <ClCompile Include="week1\Chapter1_basic1\train_실습1_2정수배열정렬삽입.cpp" />
     <ClCompile Include="week1\Chapter1_basic1\train_실습1_3다차원배열.cpp" />
     <ClCompile Include="week1\Chapter1_basic1\train_실습1_6문자열_c코드.cpp" />
