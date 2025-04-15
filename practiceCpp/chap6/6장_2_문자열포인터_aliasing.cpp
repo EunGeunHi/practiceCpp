@@ -32,14 +32,14 @@ public:
 // [Side Effect 예제 함수]
 void boostSpeed(Car& car, int factor) {
     int newSpeed = car.getSpeed() * factor;
-    car.setSpeed(newSpeed);
+    car.setSpeed(newSpeed); //Side Effect 
     cout << "[boostSpeed()] 속도 상승! 현재 속도: " << car.getSpeed() << " km/h" << endl;
 }
 // Dangling reference example 1
 Car& getNewCar1() {
-    Car temp("Ford", 90);
+    Car temp("Ford", 90);//getNewCar1()리턴후 자동으로 temp할당해제됨
     return temp;
-}
+}   //리턴된 Car객체는 유효하지 않음, 가르키는 객체가 없음
 
 // Dangling reference example 2
 Car& getNewCar2() {
@@ -61,12 +61,12 @@ int main() {
     cout << "\n🚗 변경 후 상태:\n";
     myCar.show();
 
-    //aliasing 문제
+    //aliasing 문제     //같은걸 가르킴
     Car guestCar("기아", 120);
     Car& demoCar = myCar;
     demoCar = guestCar;//demoCar를 myCar에서 guestCar로 변경
-    myCar.show();//myCar가 변경되는 aliasing 문제 발생 > 해결 방법은?
-
+    myCar.show();//guestCar가 출력됨    //myCar가 변경되는 aliasing 문제 발생 > 해결 방법은?
+    
 
     // dangling reference
     cout << "\ndangling 참조 테스트 1 (지역 변수 반환):" << endl;

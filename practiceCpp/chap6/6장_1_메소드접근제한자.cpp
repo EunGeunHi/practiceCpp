@@ -1,4 +1,4 @@
-//6Àå_1_¸Ş¼ÒµåÁ¢±ÙÁ¦ÇÑÀÚ.cpp
+//6ì¥_1_ë©”ì†Œë“œì ‘ê·¼ì œí•œì.cpp
 
 #include <iostream>
 #include <cstring>
@@ -7,18 +7,18 @@ using namespace std;
 
 class Car {
 private:
-    char* manufacturer;
+    char* manufacturer; //char* manufacturer[10];ì´ë¯¸ ë©”ëª¨ë¦¬ í• ë‹¹ë¼ìˆìŒ //string manufacturer; ì—°ìŠµ.. ì‰¬ìš°ë‹ˆê¹Œ.. 
     int speed;
 
     static int count;
 
-    // [1] Private ¸Ş¼­µå Ãß°¡: ¼Óµµ À¯È¿¼º °Ë»ç
+    // [1] Private ë©”ì„œë“œ ì¶”ê°€: ì†ë„ ìœ íš¨ì„± ê²€ì‚¬
     bool isValidSpeed(int speed) const {
         return speed >= 0 && speed <= 300;
     }
 
 public:
-    // [3] Getter ¸Ş¼­µå
+    // [3] Getter ë©”ì„œë“œ
     const char* getManufacturer() const {
         return manufacturer;
     }
@@ -36,7 +36,7 @@ public:
         strcpy(manufacturer, "Unknown");
         speed = 0;
         ++count;
-        cout << "Default Constructor È£Ãâ" << endl;
+        cout << "Default Constructor í˜¸ì¶œ" << endl;
     }
 
     Car(const char* manufacturer, int speed) {
@@ -44,7 +44,7 @@ public:
         strcpy(this->manufacturer, manufacturer);
         this->speed = speed;
         ++count;
-        cout << "Parameterized Constructor È£Ãâ" << endl;
+        cout << "Parameterized Constructor í˜¸ì¶œ" << endl;
     }
 
     Car(const Car& other) {
@@ -52,11 +52,11 @@ public:
         strcpy(this->manufacturer, other.manufacturer);
         this->speed = other.speed;
         ++count;
-        cout << "Copy Constructor È£Ãâ" << endl;
+        cout << "Copy Constructor í˜¸ì¶œ" << endl;
     }
 
     ~Car() {
-        cout << "Destructor È£Ãâ: " << manufacturer << endl;
+        cout << "Destructor í˜¸ì¶œ: " << manufacturer << endl;
         delete[] manufacturer;
         --count;
     }
@@ -68,32 +68,32 @@ public:
         return *this;
     }
 
-    // [2] Private ¸Ş¼­µå È£Ãâ Àû¿ë
+    // [2] Private ë©”ì„œë“œ í˜¸ì¶œ ì ìš©
     Car& setSpeed(int speed) {
         if (isValidSpeed(speed)) {
             this->speed = speed;
         }
         else {
-            cout << "À¯È¿ÇÏÁö ¾ÊÀº ¼ÓµµÀÔ´Ï´Ù. (0~300 km/h)\n";
-            this->speed = 0;  // ±âº»°ª
+            cout << "ìœ íš¨í•˜ì§€ ì•Šì€ ì†ë„ ì…ë‹ˆë‹¤. (0~300 km/h)\n";
+            this->speed = 0;  // ê¸°ë³¸ê°’
         }
         return *this;
     }
 
     void showCars() const {
-        cout << "Á¦Á¶»ç: " << manufacturer
-            << ", ¼Óµµ: " << speed << " km/h"
-            << ", ÇöÀç Car °´Ã¼ ¼ö: " << count << endl;
+        cout << "ì œì¡°ì‚¬: " << manufacturer
+            << ", ì†ë„: " << speed << " km/h"
+            << ", í˜„ì¬ Car ê°ì²´ ìˆ˜: " << count << endl;
     }
     void compareSpeed(const Car& other) const;
 };
 void Car::compareSpeed(const Car& other) const {
     if (this->speed > other.speed)
-        cout << manufacturer << "°¡ " << other.getManufacturer() << "º¸´Ù ºü¸¨´Ï´Ù.\n";
+        cout << manufacturer << "ê°€ " << other.getManufacturer() << "ë³´ë‹¤ ë¹ ë¦…ë‹ˆë‹¤.\n";
     else if (this->speed < other.speed)
-        cout << manufacturer << "°¡ " << other.getManufacturer() << "º¸´Ù ´À¸³´Ï´Ù.\n";
+        cout << manufacturer << "ê°€ " << other.getManufacturer() << "ë³´ë‹¤ ëŠë¦½ë‹ˆë‹¤.\n";
     else
-        cout << manufacturer << "¿Í " << other.getManufacturer() << "ÀÇ ¼Óµµ°¡ °°½À´Ï´Ù.\n";
+        cout << manufacturer << "ì™€ " << other.getManufacturer() << "ì˜ ì†ë„ê°€ ê°™ìŠµë‹ˆë‹¤.\n";
 }
 
 int Car::count = 0;
@@ -101,43 +101,43 @@ int Car::count = 0;
 int main() {
     const int SIZE = 5;
 
-    Car* carSet = new Car[SIZE]; // Default Constructor 5¹ø È£Ãâ
+    Car* carSet = new Car[SIZE]; // Default Constructor 5ë²ˆ í˜¸ì¶œ
 
-    carSet[0].setManufacturer("Çö´ë").setSpeed(100);
-    carSet[1].setManufacturer("Åä¿äÅ¸").setSpeed(120);
-    carSet[2].setManufacturer("±â¾Æ").setSpeed(-50);  // À¯È¿ÇÏÁö ¾ÊÀº ¼Óµµ ¡æ °æ°í Ãâ·Â
+    carSet[0].setManufacturer("í˜„ëŒ€").setSpeed(100);
+    carSet[1].setManufacturer("í† ìš”íƒ€").setSpeed(120);
+    carSet[2].setManufacturer("ê¸°ì•„").setSpeed(-50);  // ìœ íš¨í•˜ì§€ ì•Šì€ ì†ë„ -> ê²½ê³  ì¶œë ¥
 
     cout << "\n=== carSet[i].showCars() ===" << endl;
     for (int i = 0; i < SIZE; ++i) {
         carSet[i].showCars();
     }
 
-    cout << "\nÇöÀç ÀüÃ¼ Car °´Ã¼ ¼ö: " << Car::getCarCount() << endl;
+    cout << "\ní˜„ì¬ ì „ì²´ Car ê°ì²´ ìˆ˜:: " << Car::getCarCount() << endl;
 
-    //[Ãß°¡] Getter »ç¿ë ¿¹½Ã
-    cout << "\n--- Getter ¸Ş¼­µå »ç¿ë ¿¹½Ã ---\n";
-    cout << "carSet[0] Á¦Á¶»ç: " << carSet[0].getManufacturer() << endl;
-    cout << "carSet[1] ¼Óµµ: " << carSet[1].getSpeed() << " km/h" << endl;
-    cout << "\n--- compareSpeed() Å×½ºÆ® ---\n";
-    carSet[0].compareSpeed(carSet[1]);  // Çö´ë vs Åä¿äÅ¸
-    carSet[1].compareSpeed(carSet[2]);  // Åä¿äÅ¸ vs ±â¾Æ
+    //[ì¶”ê°€] Getter ì‚¬ìš© ì˜ˆì‹œ
+    cout << "\n--- Getter ë§¤ì„œë“œ ì‚¬ìš© ì˜ˆì‹œ ---\n";
+    cout << "carSet[0] ì œì¡°ì‚¬: " << carSet[0].getManufacturer() << endl;
+    cout << "carSet[1] ì†ë„: " << carSet[1].getSpeed() << " km/h" << endl;
+    cout << "\n--- compareSpeed() í…ŒìŠ¤íŠ¸ ---\n";
+    carSet[0].compareSpeed(carSet[1]);  // í˜„ëŒ€ vs í† ìš”íƒ€
+    carSet[1].compareSpeed(carSet[2]);  // í† ìš”íƒ€ vs ê¸°ì•„
 
-    //[Ãß°¡] Setter »ç¿ë ¿¹½Ã
-    cout << "\n--- Setter ¸Ş¼­µå·Î °ª ¼öÁ¤ ---\n";
+    //[ì¶”ê°€] Setter ì‚¬ìš© ì˜ˆì‹œ
+    cout << "\n--- Setter ë©”ì„œë“œë¡œ ê°’ ìˆ˜ì •---\n";
     carSet[3].setManufacturer("BMW");
     carSet[3].setSpeed(250);
     carSet[4].setManufacturer("Tesla").setSpeed(280);
 
-    cout << "\n=== ¼öÁ¤µÈ carSet[3]~[4] Ãâ·Â ===" << endl;
+    cout << "\n=== ìˆ˜ì •ëœ carSet[3]~[4] ì¶œë ¥ ===" << endl;
     carSet[3].showCars();
     carSet[4].showCars();
 
-    // °´Ã¼ ¼ö ÀçÈ®ÀÎ
-    cout << "\nÇöÀç ÀüÃ¼ Car °´Ã¼ ¼ö: " << Car::getCarCount() << endl;
+    // ê°ì²´ ìˆ˜ ì¬í™•ì¸
+    cout << "\ní˜„ì¬ ì „ì²´ Car ê°ì²´ ìˆ˜: " << Car::getCarCount() << endl;
 
-    delete[] carSet;  // ¼Ò¸êÀÚ È£Ãâ
+    delete[] carSet;  // ì†Œë©¸ì í˜¸ì¶œ
 
-    cout << "Car °´Ã¼ ¸ğµÎ »èÁ¦ ÈÄ ¼ö: " << Car::getCarCount() << endl;
+    cout << "Car ê°ì²´ ëª¨ë‘ ì‚­ì œ í›„ ìˆ˜: " << Car::getCarCount() << endl;
     int choice;
     cin >> choice;
     return 0;
