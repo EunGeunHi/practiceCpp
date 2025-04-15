@@ -7,25 +7,25 @@ private:
     double imag;
 
 public:
-    // »ı¼ºÀÚ
+    // ìƒì„±ì
     Complex(double r = 0.0, double i = 0.0) {
         real = r;
         imag = i;
     }
 
-    // [1] º¹¼Ò¼ö ¡¿ º¹¼Ò¼ö
+    // [1] ë³µì†Œìˆ˜ X ë³µì†Œìˆ˜
     Complex multiply(const Complex& other) const {
         double r = real * other.real - imag * other.imag;
         double i = real * other.imag + imag * other.real;
         return Complex(r, i);
     }
 
-    // [2] º¹¼Ò¼ö ¡¿ ½Ç¼ö (½ºÄ®¶ó °ö)
+    // [2] ë³µì†Œìˆ˜ X ì‹¤ìˆ˜ (ìŠ¤ì¹¼ë¼ ê³±)
     Complex multiply(double factor) const {
         return Complex(real * factor, imag * factor);
     }
 
-    // °á°ú Ãâ·Â
+    // ê²°ê³¼ ì¶œë ¥
     void print() const {
         cout << real << " + " << imag << "i" << endl;
     }
@@ -35,13 +35,13 @@ int main() {
     Complex c1(3, 4);          // 3 + 4i
     Complex c2(1, 2);          // 1 + 2i
 
-    Complex result1 = c1.multiply(c2);   // º¹¼Ò¼ö °ö¼À
-    Complex result2 = c1.multiply(2.0);  // ½Ç¼ö ¹è °ö¼À
+    Complex result1 = c1.multiply(c2);   // ë³µì†Œìˆ˜ ê³±ì…ˆ
+    Complex result2 = c1.multiply(2.0);  // ì‹¤ìˆ˜ ë°° ê³±ì…ˆ
 
-    cout << "º¹¼Ò¼ö * º¹¼Ò¼ö °á°ú: ";
+    cout << "ë³µì†Œìˆ˜ * ë³µì†Œìˆ˜ ê²°ê³¼: ";
     result1.print(); // (3+4i)*(1+2i) = -5 + 10i
 
-    cout << "º¹¼Ò¼ö * 2¹è °á°ú: ";
+    cout << "ë³µì†Œìˆ˜ *2 ë°° ê²°ê³¼: ";
     result2.print(); // 6 + 8i
 
     return 0;

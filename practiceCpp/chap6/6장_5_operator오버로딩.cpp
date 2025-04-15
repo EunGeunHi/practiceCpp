@@ -1,3 +1,4 @@
+//!!ì—°ì‚°ì ì˜¤ë²„ë¡œë”©!!
 #include <iostream>
 using namespace std;
 
@@ -7,30 +8,30 @@ private:
     double imag;
 
 public:
-    // »ı¼ºÀÚ
+    // ìƒì„±ì
     Complex(double r = 0.0, double i = 0.0) {
         real = r;
         imag = i;
     }
 
-    // º¹¼Ò¼ö ¡¿ º¹¼Ò¼ö ¿¬»êÀÚ ¿À¹ö·Îµù
+    // ë³µì†Œìˆ˜ X ë³µì†Œìˆ˜ ì—°ì‚°ì ì˜¤ë²„ë¡œë”©
     Complex operator*(const Complex& other) const {
         double r = real * other.real - imag * other.imag;
         double i = real * other.imag + imag * other.real;
         return Complex(r, i);
     }
 
-    // º¹¼Ò¼ö ¡¿ ½Ç¼ö (½ºÄ®¶ó °ö) ¿¬»êÀÚ ¿À¹ö·Îµù
+    // ë³µì†Œìˆ˜ X ì‹¤ìˆ˜ (ìŠ¤ì¹¼ë¼ ê³±) ì—°ì‚°ì ì˜¤ë²„ë¡œë”©
     Complex operator*(double scalar) const {
         return Complex(real * scalar, imag * scalar);
     }
 
-    // ½Ç¼ö ¡¿ º¹¼Ò¼ö (friend ÇÔ¼ö·Î Àü¿ª ¿¬»êÀÚ ¿À¹ö·Îµù)
+    // ì‹¤ìˆ˜ X ë³µì†Œìˆ˜ (friend í•¨ìˆ˜ë¡œ ì „ì—­ ì—°ì‚°ì ì˜¤ë²„ë¡œë”©)
     friend Complex operator*(double scalar, const Complex& c) {
         return Complex(c.real * scalar, c.imag * scalar);
     }
 
-    // Ãâ·Â ÇÔ¼ö
+    // ì¶œë ¥ í•¨ìˆ˜
     void print() const {
         cout << real << " + " << imag << "i" << endl;
     }
@@ -40,17 +41,17 @@ int main() {
     Complex c1(3, 4);   // 3 + 4i
     Complex c2(1, 2);   // 1 + 2i
 
-    Complex result1 = c1 * c2;     // º¹¼Ò¼ö °ö
-    Complex result2 = c1 * 2.0;    // º¹¼Ò¼ö * ½Ç¼ö
-    Complex result3 = 2.0 * c1;    // ½Ç¼ö * º¹¼Ò¼ö
+    Complex result1 = c1 * c2;     // ë³µì†Œìˆ˜ ê³±         //c1.operator*(C2)
+    Complex result2 = c1 * 2.0;    // ë³µì†Œìˆ˜ * ì‹¤ìˆ˜     //c1.operator*(2.0)
+    Complex result3 = 2.0 * c1;    // ì‹¤ìˆ˜ * ë³µì†Œìˆ˜     //2.0 .operator*(C1) ??--> ì˜¤í¼ë ˆì´í„° ì˜¤ë²„ë¡œë”©ì´ ì•„ë‹ˆë‹¤!
 
-    cout << "º¹¼Ò¼ö * º¹¼Ò¼ö: ";
+    cout << "ë³µì†Œìˆ˜ * ë³µì†Œìˆ˜: ";
     result1.print();  // -5 + 10i
 
-    cout << "º¹¼Ò¼ö * ½Ç¼ö: ";
+    cout << "ë³µì†Œìˆ˜ * ì‹¤ìˆ˜: ";
     result2.print();  // 6 + 8i
 
-    cout << "½Ç¼ö * º¹¼Ò¼ö: ";
+    cout << "ì‹¤ìˆ˜ * ë³µì†Œìˆ˜: ";
     result3.print();  // 6 + 8i
 
     return 0;
