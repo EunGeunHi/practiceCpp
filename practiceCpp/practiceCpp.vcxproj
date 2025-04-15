@@ -19,6 +19,20 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="chap6\6장_10_assign_shallowcopy.cpp" />
+    <ClCompile Include="chap6\6장_11_타입변환연산자.cpp" />
+    <ClCompile Include="chap6\6장_12_함수전달_복사생성자.cpp" />
+    <ClCompile Include="chap6\6장_13_friend클래스.cpp" />
+    <ClCompile Include="chap6\6장_14_stream연산자.cpp" />
+    <ClCompile Include="chap6\6장_1_메소드접근제한자.cpp" />
+    <ClCompile Include="chap6\6장_2_문자열포인터_aliasing.cpp" />
+    <ClCompile Include="chap6\6장_3_string_aliasing.cpp" />
+    <ClCompile Include="chap6\6장_4_overloading.cpp" />
+    <ClCompile Include="chap6\6장_5_operator오버로딩.cpp" />
+    <ClCompile Include="chap6\6장_6_operator_cascading.cpp" />
+    <ClCompile Include="chap6\6장_7_복소수정렬.cpp" />
+    <ClCompile Include="chap6\6장_8_증감연산자.cpp" />
+    <ClCompile Include="chap6\6장_9_치환연산자.cpp" />
     <ClCompile Include="lab.cpp" />
     <ClCompile Include="lab_1.cpp" />
     <ClCompile Include="lab_2.cpp" />

@@ -67,6 +67,12 @@
     <Filter Include="소스 파일\test2%28~6%29\lab">
       <UniqueIdentifier>{b66f44e7-63f1-4759-8816-9b58a621eff4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\test3">
+      <UniqueIdentifier>{7b7822e7-f564-4d9c-ac71-f922ae23daab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\test3\week7_1">
+      <UniqueIdentifier>{dd53e42a-f181-43d4-81a2-8e1c91c5f985}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="week1\Chapter1_basic1\train_실습1_2정수배열정렬삽입.cpp">
@@ -314,6 +320,51 @@
     </ClCompile>
     <ClCompile Include="lab_4.cpp">
       <Filter>소스 파일\test2%28~6%29\lab</Filter>
+    </ClCompile>
+    <ClCompile Include="lab_4_1.cpp">
+      <Filter>소스 파일\test2%28~6%29\lab</Filter>
+    </ClCompile>
+    <ClCompile Include="chap6\6장_1_메소드접근제한자.cpp">
+      <Filter>소스 파일\test3\week7_1</Filter>
+    </ClCompile>
+    <ClCompile Include="chap6\6장_2_문자열포인터_aliasing.cpp">
+      <Filter>소스 파일\test3\week7_1</Filter>
+    </ClCompile>
+    <ClCompile Include="chap6\6장_3_string_aliasing.cpp">
+      <Filter>소스 파일\test3\week7_1</Filter>
+    </ClCompile>
+    <ClCompile Include="chap6\6장_4_overloading.cpp">
+      <Filter>소스 파일\test3\week7_1</Filter>
+    </ClCompile>
+    <ClCompile Include="chap6\6장_5_operator오버로딩.cpp">
+      <Filter>소스 파일\test3\week7_1</Filter>
+    </ClCompile>
+    <ClCompile Include="chap6\6장_6_operator_cascading.cpp">
+      <Filter>소스 파일\test3\week7_1</Filter>
+    </ClCompile>
+    <ClCompile Include="chap6\6장_7_복소수정렬.cpp">
+      <Filter>소스 파일\test3\week7_1</Filter>
+    </ClCompile>
+    <ClCompile Include="chap6\6장_8_증감연산자.cpp">
+      <Filter>소스 파일\test3\week7_1</Filter>
+    </ClCompile>
+    <ClCompile Include="chap6\6장_9_치환연산자.cpp">
+      <Filter>소스 파일\test3\week7_1</Filter>
+    </ClCompile>
+    <ClCompile Include="chap6\6장_10_assign_shallowcopy.cpp">
+      <Filter>소스 파일\test3\week7_1</Filter>
+    </ClCompile>
+    <ClCompile Include="chap6\6장_11_타입변환연산자.cpp">
+      <Filter>소스 파일\test3\week7_1</Filter>
+    </ClCompile>
+    <ClCompile Include="chap6\6장_12_함수전달_복사생성자.cpp">
+      <Filter>소스 파일\test3\week7_1</Filter>
+    </ClCompile>
+    <ClCompile Include="chap6\6장_13_friend클래스.cpp">
+      <Filter>소스 파일\test3\week7_1</Filter>
+    </ClCompile>
+    <ClCompile Include="chap6\6장_14_stream연산자.cpp">
+      <Filter>소스 파일\test3\week7_1</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
