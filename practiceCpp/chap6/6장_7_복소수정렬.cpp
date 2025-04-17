@@ -26,7 +26,7 @@ public:
     }
 
     // swap을 위한 대입 연산자 (기본으로 충분하지만 명시 가능)
-    Complex& operator=(const Complex& other) {
+    Complex& operator=(const Complex& other) {      // 레퍼런스바이리턴은 c1 = c2 = c3 같은 경우 필요 
         if (this != &other) {
             this->real = other.real;
             this->imag = other.imag;
@@ -44,10 +44,10 @@ public:
 void sortComplex(Complex arr[], int size) {
     for (int i = 0; i < size - 1; ++i) {
         for (int j = 0; j < size - 1 - i; ++j) {
-            if (arr[j] > arr[j + 1]) {
+            if (arr[j] > arr[j + 1]) {      //비교연산자 사용하기 위해서 operator > 
                 // 교환
                 Complex temp = arr[j];
-                arr[j] = arr[j + 1];
+                arr[j] = arr[j + 1];        //치환연산자 사용하기 위해서 operator=
                 arr[j + 1] = temp;
             }
         }
@@ -63,7 +63,7 @@ void printArray(Complex arr[], int size) {
 }
 
 int main() {
-    Complex arr[] = {
+    Complex arr[] = {   //객체 배열 cf.객체 포인터들의 배열
         Complex(1, 2),   // |z| ≈ 2.236
         Complex(3, 4),   // |z| = 5
         Complex(0, 1),   // |z| = 1

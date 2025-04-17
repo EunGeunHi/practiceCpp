@@ -33,7 +33,7 @@ private:
 public:
     Car(const char* m = "", const char* md = "", double e = 0.0, int s = 0)
         : Vehicle(e, s) {
-        manufacturer = new char[strlen(m) + 1];
+        manufacturer = new char[strlen(m) + 1]; //deep copy
         strcpy(manufacturer, m);
 
         model = new char[strlen(md) + 1];

@@ -8,57 +8,57 @@ private:
     float imag;
 
 public:
-    // ±âº» »ý¼ºÀÚ
+    // ê¸°ë³¸ ìƒì„±ìž
     Complex() : real(0.0f), imag(0.0f) {}
 
-    // ºñ¸í½ÃÀû º¯È¯ »ý¼ºÀÚ (int ¡æ Complex)
+    // ë¹„ëª…ì‹œì  ë³€í™˜ ìƒì„±ìž (int -> Complex)
     Complex(int r) : real(static_cast<float>(r)), imag(0.0f) {
-        cout << "ºñ¸í½ÃÀû º¯È¯ »ý¼ºÀÚ(int): " << real << " + " << imag << "i" << endl;
+        cout << "ë¹„ëª…ì‹œì  ë³€í™˜ ìƒì„±ìž(int): " << real << " + " << imag << "i" << endl;
     }
 
-    // ¸í½ÃÀû º¯È¯ »ý¼ºÀÚ (float ¡æ Complex)
+    // ëª…ì‹œì  ë³€í™˜ ìƒì„±ìž (float -> Complex)
     explicit Complex(float r) : real(std::abs(r)), imag(0.0f) {
-        cout << "¸í½ÃÀû º¯È¯ »ý¼ºÀÚ(float): " << real << " + " << imag << "i" << endl;
+        cout << "ëª…ì‹œì  ë³€í™˜ ìƒì„±ìž(float): " << real << " + " << imag << "i" << endl;
     }
 
-    // Å¸ÀÔ º¯È¯ ÇÔ¼ö: Complex ¡æ float
+    // Å¸ï¿½ï¿½ ï¿½ï¿½È¯ ï¿½Ô¼ï¿½: Complex ï¿½ï¿½ float
     operator float() const {
-        cout << "Å¸ÀÔ º¯È¯ ÇÔ¼ö operator float() È£ÃâµÊ" << endl;
-        return std::abs(real);  // ½Ç¼öºÎ Àý´ñ°ª ¹ÝÈ¯
+        cout << "Å¸ï¿½ï¿½ ï¿½ï¿½È¯ ï¿½Ô¼ï¿½ operator float() È£ï¿½ï¿½ï¿½" << endl;
+        return std::abs(real);  // ï¿½Ç¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯
     }
 
     void show() const {
-        cout << "º¹¼Ò¼ö: " << real << " + " << imag << "i" << endl;
+        cout << "ï¿½ï¿½ï¿½Ò¼ï¿½: " << real << " + " << imag << "i" << endl;
     }
 };
 
-// Complex °´Ã¼¸¦ ¸Å°³º¯¼ö·Î ¹Þ´Â ÇÔ¼ö
+// Complex ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½Å°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ´ï¿½ ï¿½Ô¼ï¿½
 void printComplex(Complex c) {
     cout << "[printComplex] ";
     c.show();
 }
 
 int main() {
-    // ºñ¸í½ÃÀû º¯È¯ »ý¼ºÀÚ (int ¡æ Complex)
-    Complex c1 = -7;    // Complex(int) È£Ãâ
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ (int ï¿½ï¿½ Complex)
+    Complex c1 = -7;    // Complex(int) È£ï¿½ï¿½
     Complex c2;
 
-    // Å¸ÀÔ º¯È¯ ¿¬»êÀÚ + std::abs ¡æ Complex ¡æ float ¡æ abs(float)
+    // Å¸ï¿½ï¿½ ï¿½ï¿½È¯ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ + std::abs ï¿½ï¿½ Complex ï¿½ï¿½ float ï¿½ï¿½ abs(float)
     Complex c3;
-    c3 = std::abs(c1);  // operator float() È£Ãâ ¡æ float ¹ÝÈ¯ ¡æ ´Ù½Ã Complex(int) »ý¼ºÀÚ È£Ãâ
+    c3 = std::abs(c1);  // operator float() È£ï¿½ï¿½ ï¿½ï¿½ float ï¿½ï¿½È¯ ï¿½ï¿½ ï¿½Ù½ï¿½ Complex(int) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È£ï¿½ï¿½
 
-    // Ãâ·Â È®ÀÎ
-    cout << "\n°á°ú º¹¼Ò¼ö c3 = abs(c1): ";
+    // ï¿½ï¿½ï¿½ È®ï¿½ï¿½
+    cout << "\nï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ò¼ï¿½ c3 = abs(c1): ";
     c3.show();
 
-    // ¸í½ÃÀû Å¸ÀÔ º¯È¯ ¿¹Á¦
-    Complex c4 = Complex(-3.5f);  // explicit Complex(float) È£Ãâ
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ ï¿½ï¿½È¯ ï¿½ï¿½ï¿½ï¿½
+    Complex c4 = Complex(-3.5f);  // explicit Complex(float) È£ï¿½ï¿½
 
-    cout << "\n¸í½ÃÀû Å¸ÀÔ º¯È¯ c4 = Complex(-3.5f): ";
+    cout << "\nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ ï¿½ï¿½È¯ c4 = Complex(-3.5f): ";
     c4.show();
 
-    // ÇÔ¼ö È£Ãâ ½Ã ºñ¸í½ÃÀû º¯È¯
-    printComplex(19);  // int ¡æ Complex º¯È¯ÀÚ ÀÚµ¿ È£Ãâ
+    // ï¿½Ô¼ï¿½ È£ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯
+    printComplex(19);  // int ï¿½ï¿½ Complex ï¿½ï¿½È¯ï¿½ï¿½ ï¿½Úµï¿½ È£ï¿½ï¿½
 
     return 0;
 }

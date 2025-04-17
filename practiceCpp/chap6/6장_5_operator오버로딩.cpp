@@ -26,7 +26,7 @@ public:
         return Complex(real * scalar, imag * scalar);
     }
 
-    // 실수 X 복소수 (friend 함수로 전역 연산자 오버로딩)
+    // 실수 X 복소수 (friend 함수로 전역 연산자 오버로딩)-> class 메서드는 아님, 외부operator로 오버로딩: freind 필요
     friend Complex operator*(double scalar, const Complex& c) {
         return Complex(c.real * scalar, c.imag * scalar);
     }
@@ -41,9 +41,9 @@ int main() {
     Complex c1(3, 4);   // 3 + 4i
     Complex c2(1, 2);   // 1 + 2i
 
-    Complex result1 = c1 * c2;     // 복소수 곱         //c1.operator*(C2)
-    Complex result2 = c1 * 2.0;    // 복소수 * 실수     //c1.operator*(2.0)
-    Complex result3 = 2.0 * c1;    // 실수 * 복소수     //2.0 .operator*(C1) ??--> 오퍼레이터 오버로딩이 아니다!
+    Complex result1 = c1 * c2;     // 복소수 곱         //c1.operator*(C2)  ->complex 메서드(오퍼레이터 오버로딩)
+    Complex result2 = c1 * 2.0;    // 복소수 * 실수     //c1.operator*(2.0) ->complex 메서드(오퍼레이터 오버로딩)
+    Complex result3 = 2.0 * c1;    // 실수 * 복소수     //2.0 .operator*(C1) ??--> 오퍼레이터 오버로딩이 아니다!    메서드는 아님
 
     cout << "복소수 * 복소수: ";
     result1.print();  // -5 + 10i
