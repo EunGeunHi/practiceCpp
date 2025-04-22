@@ -3,7 +3,7 @@
 using namespace std;
 
 // =============================
-// Vehicle Å¬·¡½º
+// Vehicle í´ë˜ìŠ¤
 // =============================
 class Vehicle {
 protected:
@@ -17,19 +17,19 @@ public:
     }
 };
 
-// forward ¼±¾ğ
+// forward ì„ ì–¸
 class UsedCar;
 class Car;
 
 // =============================
-// Ãâ·Â ¿¬»êÀÚ friend ¼±¾ğ
+// ì¶œë ¥ ì—°ì‚°ì friend ì„ ì–¸
 // =============================
 ostream& operator<<(ostream& os, const Car& car);
 ostream& operator<<(ostream& os, const UsedCar& uc);
 bool isExpensive(const Car&, int, int);
 
 // =============================
-// Car Å¬·¡½º Á¤ÀÇ
+// í´ë˜ìŠ¤ ì •ì˜
 // =============================
 class Car : public Vehicle {
 private:
@@ -68,22 +68,22 @@ public:
 
     void show() const {
         cout << manufacturer << " " << model << " (" << madeYear << "), "
-            << price << "¸¸¿ø | ";
+            << price << "ï¿½ï¿½ï¿½ï¿½ | ";
         showSpecs();
         cout << endl;
     }
 };
 
-// Car Ãâ·Â ¿¬»êÀÚ ¿À¹ö·Îµù Á¤ÀÇ
+// Car ì¶œë ¥ ì—°ì‚°ì ì˜¤ë²„ë¡œë”© ì •ì˜
 ostream& operator<<(ostream& os, const Car& car) {
     os << car.manufacturer << " " << car.model
-        << " (" << car.madeYear << "), " << car.price << "¸¸¿ø | ";
+        << " (" << car.madeYear << "), " << car.price << "ï¿½ï¿½ï¿½ï¿½ | ";
     os << "Engine: " << car.engineSize << "L, Speed: " << car.speed << "km/h";
     return os;
 }
 
 // =============================
-// UsedCar Å¬·¡½º Á¤ÀÇ
+// UsedCar í´ë˜ìŠ¤ ì •ì˜
 // =============================
 class UsedCar {
 private:
@@ -106,7 +106,7 @@ public:
     }
 
     void showExpensiveOldCars(int minPrice, int currentYear) {
-        cout << "\n[5³â ÀÌ»ó °æ°ú & " << minPrice << "¸¸¿ø ÃÊ°ú Â÷·®]" << endl;
+        cout << "\n[5ï¿½ï¿½ ï¿½Ì»ï¿½ ï¿½ï¿½ï¿½ & " << minPrice << "ï¿½ï¿½ï¿½ï¿½ ï¿½Ê°ï¿½ ï¿½ï¿½ï¿½ï¿½]" << endl;
         for (int i = 0; i < numberCars; ++i) {
             if (isExpensive(stock[i], minPrice, currentYear)) {
                 cout << stock[i] << endl;
@@ -115,9 +115,9 @@ public:
     }
 };
 
-// UsedCar Ãâ·Â ¿¬»êÀÚ ¿À¹ö·Îµù Á¤ÀÇ
+// UsedCar ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Îµï¿½ ï¿½ï¿½ï¿½ï¿½
 ostream& operator<<(ostream& os, const UsedCar& uc) {
-    os << "\n[UsedCar ÀüÃ¼ Â÷·® ¸ñ·Ï]\n";
+    os << "\n[UsedCar ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½]\n";
     for (int i = 0; i < uc.numberCars; ++i) {
         os << uc.stock[i] << endl;
     }
@@ -125,14 +125,14 @@ ostream& operator<<(ostream& os, const UsedCar& uc) {
 }
 
 // =============================
-// friend ÇÔ¼ö Á¤ÀÇ
+// friend í•¨ìˆ˜ ì •ì˜
 // =============================
 bool isExpensive(const Car& c, int priceThreshold, int currentYear) {
     return (c.price > priceThreshold) && (c.madeYear <= currentYear - 5);
 }
 
 // =============================
-// main ÇÔ¼ö
+// main í•¨ìˆ˜
 // =============================
 int main() {
     Car cars[5] = {
@@ -145,10 +145,10 @@ int main() {
 
     UsedCar store(cars, 5);
 
-    cout << store;              // ÀüÃ¼ Â÷·® ¸ñ·Ï Ãâ·Â
-    cout << "\n>> Ã¹ ¹øÂ° Â÷·® Á¤º¸:\n" << cars[0] << endl;
+    cout << store;              // ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+    cout << "\n>> Ã¹ ï¿½ï¿½Â° ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½:\n" << cars[0] << endl;
 
-    store.showExpensiveOldCars(3000, 2025);  // 5³â ÀÌ»ó & °í°¡ Â÷·® Ãâ·Â
+    store.showExpensiveOldCars(3000, 2025);  // 5ï¿½ï¿½ ï¿½Ì»ï¿½ & ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 
     return 0;
 }

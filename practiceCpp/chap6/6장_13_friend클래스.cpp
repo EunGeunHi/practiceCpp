@@ -3,7 +3,7 @@
 using namespace std;
 
 // =============================
-// Vehicle Å¬·¡½º
+// Vehicle í´ë˜ìŠ¤
 // =============================
 class Vehicle {
 protected:
@@ -18,12 +18,13 @@ public:
 };
 
 // =============================
-// Car Å¬·¡½º Á¤ÀÇ
+// Car í´ë˜ìŠ¤ ì •ì˜
 // =============================
-class UsedCar;                     // forward ¼±¾ğ
-bool isExpensive(const class Car&, int, int);  // friend ÇÔ¼ö ¼±¾ğ
+class UsedCar;                     // forward ì„ ì–¸
+bool isExpensive(const class Car&, int, int);  // friend í•¨ìˆ˜ ì„ ì–¸
 
 class Car : public Vehicle {
+//friend class UsedCar;     // UsedCar::showExpensiveOldCars(); ì—ì„œ ì ‘ê·¼ ê°€ëŠ¥
 private:
     char* manufacturer;
     char* model;
@@ -43,7 +44,7 @@ public:
         strcpy(model, md);
     }
 
-    // º¹»ç »ı¼ºÀÚ
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     Car(const Car& other) : Vehicle(other) {
         madeYear = other.madeYear;
         price = other.price;
@@ -60,34 +61,34 @@ public:
 
     void show() const {
         cout << manufacturer << " " << model << " (" << madeYear << "), "
-            << price << "¸¸¿ø | ";
+            << price << "ï¿½ï¿½ï¿½ï¿½ | ";
         showSpecs();
         cout << endl;
     }
 };
 
 // =============================
-// friend ÇÔ¼ö Á¤ÀÇ
+// friend í•¨ìˆ˜ ì •ì˜ 
 // =============================
 bool isExpensive(const Car& c, int priceThreshold, int currentYear) {
     return (c.price > priceThreshold) && (c.madeYear <= currentYear - 5);
 }
 
 // =============================
-// UsedCar Å¬·¡½º Á¤ÀÇ
+// UsedCar í´ë˜ìŠ¤ ì •ì˜
 // =============================
 class UsedCar {
 private:
-    Car* stock;
+    Car* stock; //ì¬ê³  í…Œì´ë¸” == Car stock[]
     int numberCars;
 
 public:
-    // »õ »ı¼ºÀÚ: ¿ÜºÎ¿¡¼­ Car ¹è¿­ Àü´Ş ¹Ş±â
+    // ìƒˆ ìƒì„±ì: ì™¸ë¶€ì—ì„œ Carë°°ì—´ ì „ë‹¬ ë°›ê¸°
     UsedCar(Car* cars, int n) {
         numberCars = n;
         stock = new Car[numberCars];
         for (int i = 0; i < numberCars; ++i) {
-            stock[i] = cars[i];  // º¹»ç ´ëÀÔ ¿¬»ê
+            stock[i] = cars[i];  // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         }
     }
 
@@ -96,15 +97,18 @@ public:
     }
 
     void showAllCars() {
-        cout << "\n[ÀüÃ¼ Â÷·® ¸ñ·Ï]" << endl;
+        cout << "\n[ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½]" << endl;
         for (int i = 0; i < numberCars; ++i) {
             stock[i].show();
         }
     }
 
     void showExpensiveOldCars(int minPrice, int currentYear) {
-        cout << "\n[5³â ÀÌ»ó °æ°ú & " << minPrice << "¸¸¿ø ÃÊ°ú Â÷·®]" << endl;
+        cout << "\n[5ë…„ ì´ìƒ ê²½ê³¼ & " << minPrice << "ë§Œì› ì´ˆê°€ ì°¨ëŸ‰]" << endl;
         for (int i = 0; i < numberCars; ++i) {
+            /*
+            if (stock[i].price > 10000){}
+            */
             if (isExpensive(stock[i], minPrice, currentYear)) {
                 stock[i].show();
             }
@@ -113,10 +117,10 @@ public:
 };
 
 // =============================
-// main Å×½ºÆ® ÄÚµå
+// main í…ŒìŠ¤íŠ¸ ì½”ë“œ
 // =============================
 int main() {
-    // 5°³ Car °´Ã¼ »ı¼º
+    // 5ê°œ Car ê°ì²´ ìƒì„±
     Car cars[5] = {
         Car("Hyundai", "Grandeur", 2018, 3200, 2.4, 180),
         Car("Kia", "K5", 2019, 2500, 1.6, 170),
@@ -125,10 +129,10 @@ int main() {
         Car("KGM", "Torres", 2020, 3600, 1.5, 165)
     };
 
-    UsedCar store(cars, 5);  // ¹è¿­·Î ÃÊ±âÈ­
+    UsedCar store(cars, 5);  // ë°°ì—´ë¡œ ì´ˆê¸°í™”
 
     store.showAllCars();
-    store.showExpensiveOldCars(3000, 2025);  // 5³â ÀÌ»ó & °í°¡ Â÷·® °Ë»ö
+    store.showExpensiveOldCars(3000, 2025);  // 5ë…„ ì´ìƒ & ê³ ê°€ ì°¨ëŸ‰ ê²€ìƒ‰
 
     return 0;
 }
