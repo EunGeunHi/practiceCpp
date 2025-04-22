@@ -136,3 +136,16 @@ int main() {
 
     return 0;
 }
+
+
+/* 3차 시험 문제 낸다면
+
+UsedCar::insert()
+UsedCar::delete()
+UsedCar::update()
+UsedCar::search()
+UsedCar::show()
+
+
+ENUM 인터페이스는 기본
+*/
