@@ -24,8 +24,9 @@ class Car;
 // =============================
 // 출력 연산자 friend 선언
 // =============================
-ostream& operator<<(ostream& os, const Car& car);
-ostream& operator<<(ostream& os, const UsedCar& uc);
+ostream& operator<<(ostream& os, const Car& car);   //ostream& Car::operator<<(); 가 아님!
+ostream& operator<<(ostream& os, const UsedCar& uc);    //반환값 ostream&인 이유: cout << c1 << c2 << c3 인 경우 앞에서부터 << c1 을 os로 반환, 이어서 c2 c3 캐스캐이팅
+
 bool isExpensive(const Car&, int, int);
 
 // =============================
@@ -38,6 +39,11 @@ private:
     int madeYear;
     int price;
 
+    char* copyString(const char* s){ //deep copy중복 코드 줄임
+        ret = new char[strlen(s) + 1];
+        strcpy(ret, s);
+        return ret;
+    }
 public:
     friend class UsedCar;
     friend ostream& operator<<(ostream& os, const Car& car);
@@ -46,10 +52,15 @@ public:
     Car(const char* m = "", const char* md = "", int y = 0, int p = 0,
         double e = 0.0, int s = 0)
         : Vehicle(e, s), madeYear(y), price(p) {
+        manufacturer = copyString(m);
+        model = copyString(md);
+        /*
         manufacturer = new char[strlen(m) + 1];
         strcpy(manufacturer, m);
         model = new char[strlen(md) + 1];
         strcpy(model, md);
+        */
+        
     }
 
     Car(const Car& other) : Vehicle(other) {
@@ -60,7 +71,18 @@ public:
         model = new char[strlen(other.model) + 1];
         strcpy(model, other.model);
     }
-
+    /*
+    //컴파일러가 만드는 치환연산자는 shallowcopy
+    Car& operator = (const Car& other){
+        if (this != &other){
+        Vehicle::operator(other)
+        }
+    
+    }
+    ...
+    
+    
+    */
     ~Car() {
         delete[] manufacturer;
         delete[] model;
@@ -97,7 +119,7 @@ public:
         numberCars = n;
         stock = new Car[numberCars];
         for (int i = 0; i < numberCars; ++i) {
-            stock[i] = cars[i];
+            stock[i] = cars[i]; //치환문 : deep copy 아니면 err
         }
     }
 
@@ -106,7 +128,7 @@ public:
     }
 
     void showExpensiveOldCars(int minPrice, int currentYear) {
-        cout << "\n[5�� �̻� ��� & " << minPrice << "���� �ʰ� ����]" << endl;
+        cout << "\n[5년 이상 경과 & " << minPrice << "���� �ʰ� ����]" << endl;
         for (int i = 0; i < numberCars; ++i) {
             if (isExpensive(stock[i], minPrice, currentYear)) {
                 cout << stock[i] << endl;
@@ -152,3 +174,15 @@ int main() {
 
     return 0;
 }
+
+
+/*
+파일 새로 다운받아서 비교
+
+
+friend      사용
+operator+   구현
+operator=   구현
+operator<<  구현
+
+*/
