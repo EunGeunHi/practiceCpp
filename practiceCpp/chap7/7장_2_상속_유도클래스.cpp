@@ -6,7 +6,7 @@ using namespace std;
 // Vehicle 클래스
 // =============================
 class Vehicle {
-protected:
+private:
     double engineSize;
     int speed;
 
@@ -27,7 +27,13 @@ private:
     char* model;
     int madeYear;
     int price;
-
+    /*
+static char* copyString(const char* src) { // 코드 간결화에 사용
+    char* dest = new char[strlen(src) + 1];
+    strcpy(dest, src);
+    return dest;
+}
+*/
 public:
     Car(const char* m = "", const char* md = "", int y = 0, int p = 0,
         double e = 0.0, int s = 0)
@@ -53,9 +59,9 @@ public:
     }
 
     virtual void show() const override {
+        Vehicle::show();
         cout << manufacturer << " " << model << " (" << madeYear << "), "
             << price << "만원 | ";
-        Vehicle::show();
         cout << endl;
     }
 
@@ -77,7 +83,7 @@ public:
         : Car(m, md, y, p, e, s), batteryCapacity(battery), mode(driveMode) {}
 
     void show() const override {
-        Car::show();
+        Car::show(); //코드재사용
         cout << "Battery: " << batteryCapacity << "kWh, Mode: " << mode << endl;
     }
 };
@@ -87,20 +93,19 @@ public:
 // =============================
 class UsedVehicleStore {
 private:
-    Vehicle** vehicles;
+    Vehicle* vehicles[5];
     int numberVehicles;
 
 public:
     UsedVehicleStore(Vehicle** vList, int n) {
         numberVehicles = n;
-        vehicles = new Vehicle * [n];
         for (int i = 0; i < n; ++i) {
             vehicles[i] = vList[i];  // 얕은 복사
         }
     }
 
     ~UsedVehicleStore() {
-        delete[] vehicles;
+       // delete[] vehicles;
     }
 
     void showAll() const {
@@ -135,6 +140,7 @@ int main() {
     delete c2;
     delete h1;
     delete h2;
-
+    int choice;
+    cin >> choice;
     return 0;
 }

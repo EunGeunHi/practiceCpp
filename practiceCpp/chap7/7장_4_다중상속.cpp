@@ -11,7 +11,13 @@ private:
     char* model;
     int madeYear;
     int price;
-
+    /*
+    static char* copyString(const char* src) { // 코드 간결화에 사용
+        char* dest = new char[strlen(src) + 1];
+        strcpy(dest, src);
+        return dest;
+    }
+    */
 public:
     Vehicle(const char* m = "", const char* md = "", int y = 0, int p = 0)
         : madeYear(y), price(p) {
@@ -55,7 +61,7 @@ public:
         : Vehicle(m, md, y, p), engineSize(e), speed(s) {}
 
     friend ostream& operator<<(ostream& os, const Car& c) {
-        os << static_cast<const Vehicle&>(c)
+        os << static_cast<const Vehicle&>(c)    //c를 vehicle로 바꾼후
             << " | Engine: " << c.engineSize << "L, Speed: " << c.speed << "km/h";
         return os;
     }
@@ -89,8 +95,8 @@ public:
         : Car(m, md, y, p, e, s), Battery(cap, "Hybrid") {}
 
     friend ostream& operator<<(ostream& os, const HybridCar& h) {
-        os << static_cast<const Car&>(h);
-        os << static_cast<const Battery&>(h);
+        os << static_cast<const Car&>(h);       //캐스팅해서
+        os << static_cast<const Battery&>(h);   //캐스팅해서
         return os;
     }
 };
@@ -128,6 +134,7 @@ int main() {
     cout << "\n[전기차 목록]\n";
     cout << e1 << endl;
     cout << e2 << endl;
-
+    int choice;
+    cin >> choice;
     return 0;
 }

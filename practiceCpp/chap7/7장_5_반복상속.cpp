@@ -1,10 +1,11 @@
 #include <iostream>
 #include <cstring>
-#include <vector>
 using namespace std;
 
+const int MAX_SIZE = 100;
+
 // =============================
-// Vehicle 클래스 (공통 정보)
+// Vehicle 클래스
 // =============================
 class Vehicle {
 private:
@@ -12,20 +13,23 @@ private:
     char* model;
     int price;
 
+    static char* copyString(const char* src) {
+        if (!src) return nullptr;
+        char* dest = new char[strlen(src) + 1];
+        strcpy(dest, src);
+        return dest;
+    }
+
 public:
     Vehicle(const char* m = "", const char* md = "", int p = 0)
         : price(p) {
-        manufacturer = new char[strlen(m) + 1];
-        strcpy(manufacturer, m);
-        model = new char[strlen(md) + 1];
-        strcpy(model, md);
+        manufacturer = copyString(m);
+        model = copyString(md);
     }
 
     Vehicle(const Vehicle& other) : price(other.price) {
-        manufacturer = new char[strlen(other.manufacturer) + 1];
-        strcpy(manufacturer, other.manufacturer);
-        model = new char[strlen(other.model) + 1];
-        strcpy(model, other.model);
+        manufacturer = copyString(other.manufacturer);
+        model = copyString(other.model);
     }
 
     virtual ~Vehicle() {
@@ -43,14 +47,14 @@ public:
 // =============================
 class Battery {
 private:
-    int capacity;  // kWh
+    int capacity;
     string mode;
 
 public:
     Battery(int cap = 0, const string& m = "EV") : capacity(cap), mode(m) {}
     virtual ~Battery() {}
 
-    virtual void showDetails() const {
+    virtual void show() const {
         cout << " | Battery: " << capacity << "kWh, Mode: " << mode;
     }
 };
@@ -69,11 +73,6 @@ public:
 
     void show() const override {
         Vehicle::show();
-        showDetails();
-        cout << endl;
-    }
-
-    void showDetails() const {
         cout << " | Passengers: " << passengers << ", Engine: " << engineSize << "L";
     }
 };
@@ -91,11 +90,6 @@ public:
 
     void show() const override {
         Vehicle::show();
-        showDetails();
-        cout << endl;
-    }
-
-    void showDetails() const {
         cout << " | Load Capacity: " << loadCapacity << " tons";
     }
 };
@@ -105,16 +99,17 @@ public:
 // =============================
 class CarTruck : public Car, public Truck {
 public:
-    CarTruck(const char* m, const char* md, int p, int people, double e, double load)
+    CarTruck(const char* m, const char* md, int p, int people, double e, double load)   //!!핵심!!
         : Vehicle(m, md, p),
-        Car(m, md, p, people, e),
+        Car(m, md, p, people, e),   //virtual상속이기에 vehicle데이터 멤버 제외
         Truck(m, md, p, load) {}
 
     void show() const override {
-        Vehicle::show();  // Vehicle 정보는 한 번만 출력
-        Car::showDetails();
-        Truck::showDetails();
-        cout << endl;
+        Vehicle::show();
+        cout << " | Passengers: ";
+        Car::show();       // 이 부분에서 Vehicle 중복 방지
+        cout << ", ";
+        Truck::show();     // 추가 정보
     }
 };
 
@@ -128,8 +123,7 @@ public:
 
     void show() const override {
         Vehicle::show();
-        Battery::showDetails();
-        cout << endl;
+        Battery::show();
     }
 };
 
@@ -144,10 +138,10 @@ public:
         Battery(cap, "Hybrid") {}
 
     void show() const override {
-        Vehicle::show();       // Vehicle 정보는 한 번만 출력
-        Car::showDetails();    // Car 정보
-        Battery::showDetails(); // 배터리 정보
-        cout << endl;
+        Vehicle::show();
+        cout << " | ";
+        Car::show();
+        Battery::show();
     }
 };
 
@@ -156,28 +150,37 @@ public:
 // =============================
 class UsedVehicleStore {
 private:
-    vector<Vehicle*> vehicles;
+    Vehicle** vehicles;
+    int count;
 
 public:
+    UsedVehicleStore() {
+        vehicles = new Vehicle * [MAX_SIZE];
+        count = 0;
+    }
+
     ~UsedVehicleStore() {
-        for (auto v : vehicles) delete v;
+        for (int i = 0; i < count; ++i)
+            delete vehicles[i];
+        delete[] vehicles;
     }
 
     void add(Vehicle* v) {
-        vehicles.push_back(v);
+        if (count < MAX_SIZE) {
+            vehicles[count++] = v;
+        }
     }
 
-    void showAll() const {
+    void show() const {  // 오버로딩된 show
         cout << "\n[중고 차량 목록 출력]\n";
-        for (auto v : vehicles) {
-            v->show();
+        for (int i = 0; i < count; ++i) {
+            vehicles[i]->show();
+            cout << endl;
         }
     }
 };
 
-// =============================
-// main()
-// =============================
+
 int main() {
     UsedVehicleStore store;
 
@@ -187,6 +190,9 @@ int main() {
     store.add(new ElectricCar("Tesla", "Model 3", 5500, 75));
     store.add(new HybridCar("Toyota", "Prius", 3200, 4, 1.8, 45));
 
-    store.showAll();
+    store.show();  // 오버로딩된 show 사용
+
+    int choice;
+    cin >> choice;
     return 0;
 }

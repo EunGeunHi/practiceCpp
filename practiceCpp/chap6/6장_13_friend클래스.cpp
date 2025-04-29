@@ -144,8 +144,36 @@ UsedCar::insert()
 UsedCar::delete()
 UsedCar::update()
 UsedCar::search()
-UsedCar::show()
+UsedCar::sort()
+UsedCar::showAll()
 
 
 ENUM 인터페이스는 기본
+
+
+
+*2차 재시험
+class Student{
+    char*name;
+    int sid
+    char*dept;
+}
+    
+show대신 operator<< 오버라이딩
+
+main(){
+    c1 = new Student()...
+    Student *st[] = {c1,c2...};     -->이 과정 연습할것
+
+    switch( ){
+        case :
+            add(st,count);
+            delete(st,count,"searching Name");
+            update()
+            search()
+            sort()
+            ...
+
+    }
+}
 */

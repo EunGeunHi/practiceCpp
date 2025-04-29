@@ -22,13 +22,19 @@ public:
 // =============================
 // Car 클래스
 // =============================
-class Car : private Vehicle {  // ← private 상속
+class Car : public Vehicle {  
 protected:  // ← HybridCar에서 직접 접근하기 위해 private → protected 변경
     char* manufacturer;
     char* model;
     int madeYear;
     int price;
-
+    /*
+    static char* copyString(const char* src) { // 코드 간결화에 사용
+        char* dest = new char[strlen(src) + 1];
+        strcpy(dest, src);
+        return dest;
+    }
+    */
 public:
     Car(const char* m = "", const char* md = "", int y = 0, int p = 0,
         double e = 0.0, int s = 0)
@@ -54,13 +60,13 @@ public:
     }
 
     virtual void show() const {
+        Vehicle::show();
         cout << manufacturer << " " << model << " (" << madeYear << "), "
             << price << "만원 | ";
-        Vehicle::show();
         cout << endl;
     }
 
-    // 다형성 처리를 위해 friend 선언
+    // polymorphism 처리를 위해 friend 선언
     friend class HybridCar;
     friend class UsedVehicleStore;
 };
@@ -68,7 +74,8 @@ public:
 // =============================
 // HybridCar 클래스
 // =============================
-class HybridCar : private Car {
+class HybridCar : public Car {  // 상속모드
+//class HybridCar : Car 은 private, class HybridCar : protected Car 
 private:
     int batteryCapacity;  // kWh
     string mode;          // "EV", "Engine", "Hybrid"
@@ -79,10 +86,7 @@ public:
         : Car(m, md, y, p, e, s), batteryCapacity(battery), mode(driveMode) {}
 
     void show() const {
-        // Car 멤버 직접 접근 (protected이므로 가능)
-        cout << manufacturer << " " << model << " (" << madeYear << "), "
-            << price << "만원 | ";
-        cout << "Engine: " << engineSize << "L, Speed: " << speed << "km/h | ";
+        Car::show();
         cout << "Battery: " << batteryCapacity << "kWh, Mode: " << mode << endl;
     }
 
@@ -94,13 +98,13 @@ public:
 // =============================
 class UsedVehicleStore {
 private:
-    void** vehicles;  // Vehicle 포인터가 아님! 다형성이 깨졌기 때문에 void*로 처리
+    Vehicle ** vehicles;  
     int numberVehicles;
 
 public:
-    UsedVehicleStore(void** vList, int n) {
+    UsedVehicleStore(Vehicle** vList, int n) {
         numberVehicles = n;
-        vehicles = new void* [n];
+        vehicles = new Vehicle* [n];
         for (int i = 0; i < n; ++i) {
             vehicles[i] = vList[i];
         }
@@ -113,11 +117,7 @@ public:
     void showAll() const {
         cout << "\n[중고 차량 목록 출력]\n";
         for (int i = 0; i < numberVehicles; ++i) {
-            // Vehicle* 로 형변환 불가하므로 실제 타입에 따라 분기
-            if (i < 2) // 앞 2개는 Car
-                ((Car*)vehicles[i])->show();
-            else       // 뒤 2개는 HybridCar
-                ((HybridCar*)vehicles[i])->show();
+            vehicles[i]->show();
         }
     }
 };
@@ -132,7 +132,7 @@ int main() {
     HybridCar* h2 = new HybridCar("Hyundai", "Ioniq", 2021, 3300, 1.6, 165, 42, "EV");
 
     // Vehicle 포인터 배열을 사용할 수 없음 (private 상속이기 때문에)
-    void* vList[4] = { c1, c2, h1, h2 };
+    Vehicle* vList[4] = { c1, c2, h1, h2 };
 
     UsedVehicleStore store(vList, 4);
     store.showAll();
@@ -141,6 +141,7 @@ int main() {
     delete c2;
     delete h1;
     delete h2;
-
+    int choice;
+    cin >> choice;
     return 0;
 }
