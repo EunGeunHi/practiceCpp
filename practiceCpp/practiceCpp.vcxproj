@@ -33,6 +33,13 @@
     <ClCompile Include="chap6\6장_7_복소수정렬.cpp" />
     <ClCompile Include="chap6\6장_8_증감연산자.cpp" />
     <ClCompile Include="chap6\6장_9_치환연산자.cpp" />
+    <ClCompile Include="chap7\7장_1_상속_재사용.cpp" />
+    <ClCompile Include="chap7\7장_2_상속_유도클래스.cpp" />
+    <ClCompile Include="chap7\7장_3_1_상속_private상속.cpp" />
+    <ClCompile Include="chap7\7장_3_상속_private상속.cpp" />
+    <ClCompile Include="chap7\7장_4_다중상속.cpp" />
+    <ClCompile Include="chap7\7장_5_반복상속.cpp" />
+    <ClCompile Include="chap7\7장_6_다중상속예.cpp" />
     <ClCompile Include="lab.cpp" />
     <ClCompile Include="lab_1.cpp" />
     <ClCompile Include="lab_2.cpp" />
