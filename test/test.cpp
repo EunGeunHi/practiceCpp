@@ -1,4 +1,4 @@
-//6Àå_1_¸Þ¼ÒµåÁ¢±ÙÁ¦ÇÑÀÚ.cpp
+//6ï¿½ï¿½_1_ï¿½Þ¼Òµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.cpp
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <iostream>
@@ -31,8 +31,25 @@ public:
     }
     void show() const override;
 };
-class Truck:virtual public Vehicle {};
-class CarTruck: public Car,public Truck{};
+class Truck:virtual public Vehicle {
+private:
+    double loadCapacity;
+public:
+    Truck(const char* m, const char* md, int p, double load):Vehicle(m,md,p), loadCapacity(load){}
+    void show() const override;
+};
+class CarTruck: public Car,public Truck{
+public:
+    CarTruck(const char* m, const char* md, int p, int people, double e, double load):
+    Vehicle(m, md, p),Car(m, md, p, people, e),Truck(m, md, p, load) {}
+    void show() const override{
+        Vehicle::show();
+        cout << " | Passengers: ";
+        Car::show();       // ì´ ë¶€ë¶„ì—ì„œ Vehicle ì¤‘ë³µ ë°©ì§€
+        cout << ", ";
+        Truck::show();     // ì¶”ê°€ ì •ë³´
+    }
+};
 class Battery{};
 class ElectricCar: public Vehicle, public Battery{};
 class HybridCar: public Car, public Battery{};
@@ -55,7 +72,7 @@ int main() {
     store.add(new ElectricCar("Tesla", "Model 3", 5500, 75));
     store.add(new HybridCar("Toyota", "Prius", 3200, 4, 1.8, 45));
 
-    store.show();  // ¿À¹ö·ÎµùµÈ show »ç¿ë
+    store.show();  // ï¿½ï¿½ï¿½ï¿½ï¿½Îµï¿½ï¿½ï¿½ show ï¿½ï¿½ï¿½
 
     int choice;
     cin >> choice;
