@@ -40,6 +40,11 @@
     <ClCompile Include="chap7\7장_4_다중상속.cpp" />
     <ClCompile Include="chap7\7장_5_반복상속.cpp" />
     <ClCompile Include="chap7\7장_6_다중상속예.cpp" />
+    <ClCompile Include="chap8\8장_1_struct타입호환.cpp" />
+    <ClCompile Include="chap8\8장_2_클래스타입호환.cpp" />
+    <ClCompile Include="chap8\8장_3_클래스타입_변환연산자.cpp" />
+    <ClCompile Include="chap8\8장_4_동적바인딩_함수내.cpp" />
+    <ClCompile Include="chap8\8장_5_동적바인딩_컨테이너클래스.cpp" />
     <ClCompile Include="lab.cpp" />
     <ClCompile Include="lab_1.cpp" />
     <ClCompile Include="lab_2.cpp" />

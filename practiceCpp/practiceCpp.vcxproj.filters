@@ -73,6 +73,15 @@
     <Filter Include="소스 파일\test3\week7_1">
       <UniqueIdentifier>{dd53e42a-f181-43d4-81a2-8e1c91c5f985}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\test3\week7_2">
+      <UniqueIdentifier>{3e1ba796-bf74-4071-a546-4565baf19539}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\test4">
+      <UniqueIdentifier>{4cf00f6b-2a79-44c1-a1f0-3a09f21be1ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\test4\week11_1">
+      <UniqueIdentifier>{bde4eb96-2e09-4a10-963c-f2df71408d8a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="week1\Chapter1_basic1\train_실습1_2정수배열정렬삽입.cpp">
@@ -365,6 +374,42 @@
     </ClCompile>
     <ClCompile Include="chap6\6장_14_stream연산자.cpp">
       <Filter>소스 파일\test3\week7_1</Filter>
+    </ClCompile>
+    <ClCompile Include="chap7\7장_1_상속_재사용.cpp">
+      <Filter>소스 파일\test3\week7_2</Filter>
+    </ClCompile>
+    <ClCompile Include="chap7\7장_2_상속_유도클래스.cpp">
+      <Filter>소스 파일\test3\week7_2</Filter>
+    </ClCompile>
+    <ClCompile Include="chap7\7장_3_1_상속_private상속.cpp">
+      <Filter>소스 파일\test3\week7_2</Filter>
+    </ClCompile>
+    <ClCompile Include="chap7\7장_3_상속_private상속.cpp">
+      <Filter>소스 파일\test3\week7_2</Filter>
+    </ClCompile>
+    <ClCompile Include="chap7\7장_4_다중상속.cpp">
+      <Filter>소스 파일\test3\week7_2</Filter>
+    </ClCompile>
+    <ClCompile Include="chap7\7장_5_반복상속.cpp">
+      <Filter>소스 파일\test3\week7_2</Filter>
+    </ClCompile>
+    <ClCompile Include="chap7\7장_6_다중상속예.cpp">
+      <Filter>소스 파일\test3\week7_2</Filter>
+    </ClCompile>
+    <ClCompile Include="chap8\8장_1_struct타입호환.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="chap8\8장_2_클래스타입호환.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="chap8\8장_3_클래스타입_변환연산자.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="chap8\8장_4_동적바인딩_함수내.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="chap8\8장_5_동적바인딩_컨테이너클래스.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
