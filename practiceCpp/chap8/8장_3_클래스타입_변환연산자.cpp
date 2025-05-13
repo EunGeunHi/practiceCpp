@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-// forward ¼±¾ğ (»óÈ£ ÂüÁ¶ À§ÇØ ÇÊ¿ä)
+// forward ì„ ì–¸ (ìƒí˜¸ ì°¸ì¡° ìœ„í•´ í•„ìš”)
 class ComplexB;
 
 class ComplexA {
@@ -11,10 +11,10 @@ private:
 public:
     ComplexA(float r = 0.0, float i = 0.0) : real(r), imag(i) {}
 
-    // ComplexB ¡æ ComplexA º¯È¯ »ı¼ºÀÚ
+    // ComplexB -> ComplexA ë³€í™˜ ìƒì„±ì
     ComplexA(const ComplexB& b);
 
-    // ComplexB ¡æ ComplexA ´ëÀÔ ¿¬»êÀÚ
+    // ComplexB -> ComplexA ëŒ€ì… ì—°ì‚°ì
     ComplexA& operator=(const ComplexB& b);
 
     float getReal() const { return real; }
@@ -32,18 +32,18 @@ private:
 public:
     ComplexB(float r = 0.0, float i = 0.0) : real(r), imag(i) {}
 
-    // ComplexA ¡æ ComplexB º¯È¯ »ı¼ºÀÚ
+    // ComplexA -> ComplexB ë³€í™˜ ìƒì„±ì 
     ComplexB(const ComplexA& a) {
         real = a.getReal();
         imag = a.getImag();
-        cout << "ComplexB º¯È¯ »ı¼ºÀÚ È£ÃâµÊ\n";
+        cout << "ComplexB ë³€í™˜ ìƒì„±ì í˜¸ì¶œë¨\n";
     }
 
-    // ComplexA ¡æ ComplexB ´ëÀÔ ¿¬»êÀÚ
+    // ComplexA -> ComplexB ëŒ€ì… ì—°ì‚°ì
     ComplexB& operator=(const ComplexA& a) {
         real = a.getReal();
         imag = a.getImag();
-        cout << "ComplexB º¯È¯ ¿¬»êÀÚ È£ÃâµÊ\n";
+        cout << "ComplexB ëŒ€ì… ì—°ì‚°ì í˜¸ì¶œë¨\n";
         return *this;
     }
 
@@ -55,17 +55,17 @@ public:
     }
 };
 
-// ComplexA ¸â¹ö ÇÔ¼ö Á¤ÀÇ (ComplexB Æ÷ÇÔ ÀÌÈÄ¿¡)
+// ComplexA ë©¤ë²„ í•¨ìˆ˜ ì •ì˜ (ComplexB í¬í•¨ ì´í›„ì—)
 ComplexA::ComplexA(const ComplexB& b) {
     real = b.getReal();
     imag = b.getImag();
-    cout << "ComplexA º¯È¯ »ı¼ºÀÚ È£ÃâµÊ\n";
+    cout << "ComplexA ë³€í™˜ ìƒì„±ì í˜¸ì¶œë¨\n";
 }
 
 ComplexA& ComplexA::operator=(const ComplexB& b) {
     real = b.getReal();
     imag = b.getImag();
-    cout << "ComplexA º¯È¯ ¿¬»êÀÚ È£ÃâµÊ\n";
+    cout << "ComplexA ë³€í™˜ ì—°ì‚°ì í˜¸ì¶œë¨\n";
     return *this;
 }
 
@@ -73,19 +73,24 @@ int main() {
     ComplexA a(1.0, 2.0);
     ComplexB b(3.0, 4.0);
 
-    cout << "\n--- ÃÊ±â »óÅÂ ---\n";
+    cout << "\n--- ì´ˆê¸° ìƒíƒœ ---\n";
     a.print();
     b.print();
 
-    cout << "\n--- a = b È£Ãâ ---\n";
-    a = b; // ComplexB ¡æ ComplexA
+    cout << "\n--- a = b í˜¸ì¶œ ---\n";
+    a = b; // ComplexB -> ComplexA
 
-    cout << "\n--- b = a È£Ãâ ---\n";
-    b = a; // ComplexA ¡æ ComplexB
+    cout << "\n--- b = a í˜¸ì¶œ---\n";
+    b = a; // ComplexA -> ComplexB
 
-    cout << "\n--- ÃÖÁ¾ »óÅÂ ---\n";
+    cout << "\n--- ìµœì¢… ìƒíƒœ ---\n";
     a.print();
     b.print();
 
     return 0;
 }
+
+/*
+êµ¬ì¡°ì²´ëŠ” ì§€ì›ì•ˆë˜ì§€ë§Œ
+í´ë˜ìŠ¤ëŠ” ì¬ì •ì˜ í•˜ë©° ë‹¤ë¥¸ íƒ€ì…ìœ¼ë¡œë„ ê°€ëŠ¥
+*/
