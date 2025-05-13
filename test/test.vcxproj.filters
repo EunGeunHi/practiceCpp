@@ -16,6 +16,9 @@
     <Filter Include="소스 파일\6장">
       <UniqueIdentifier>{988a4398-496e-4119-a20a-99c64aa87f52}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\8장">
+      <UniqueIdentifier>{a45cb50c-7cb7-48e9-90b9-41ea5a2486e4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="test.cpp">

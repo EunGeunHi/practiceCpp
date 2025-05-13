@@ -397,19 +397,19 @@
       <Filter>소스 파일\test3\week7_2</Filter>
     </ClCompile>
     <ClCompile Include="chap8\8장_1_struct타입호환.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\test4\week11_1</Filter>
     </ClCompile>
     <ClCompile Include="chap8\8장_2_클래스타입호환.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\test4\week11_1</Filter>
     </ClCompile>
     <ClCompile Include="chap8\8장_3_클래스타입_변환연산자.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\test4\week11_1</Filter>
     </ClCompile>
     <ClCompile Include="chap8\8장_4_동적바인딩_함수내.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\test4\week11_1</Filter>
     </ClCompile>
     <ClCompile Include="chap8\8장_5_동적바인딩_컨테이너클래스.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\test4\week11_1</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
