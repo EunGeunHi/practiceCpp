@@ -66,7 +66,7 @@ public:
 // =========================
 class UsedVehicleStore {
 private:
-    Vehicle* table[10];  // 최대 10대 저장 -> 컨테이너  //정적할당..->stack영역 메모리 
+    Vehicle* table[10]; //이렇게 두면 nullptr // 최대 10대 저장 -> 컨테이너  //정적할당..->stack영역 메모리 
     int count;
 
 public:

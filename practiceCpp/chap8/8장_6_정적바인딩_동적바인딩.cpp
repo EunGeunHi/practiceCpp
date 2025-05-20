@@ -70,6 +70,31 @@ public:
     }
 };
 
+// class Bus : public Vehicle { //subclassing
+// private:
+//     char* company;
+//     int passengers
+
+// public:
+//     Bus(double e, int s, char* co, int p)
+//         : Vehicle(e, s), passengers(p) {
+//         company = new char[strlen(co)+1];
+//         strcpy(model,m);   
+//         }
+//     ~Bus()override{
+//         delete[] company;
+//     }
+
+//     void show() const override { //  동적 바인딩
+//         cout << " Bus - company: " << company << " tons, Engine: "
+//             << engineSize << "L, Speed: " << speed << "km/h\n";
+//     }
+
+//     void print() const { // 정적 바인딩
+//         cout << "[Truck] Capacity: " << capacity << " tons\n";
+//     }
+// };
+
 // =========================
 // 차량 저장소 클래스
 // =========================
@@ -109,6 +134,11 @@ public:
         for (int i = 0; i < count; ++i)
             table[i]->print();  // 정적 바인딩 (Vehicle::print 호출됨!)
     }
+
+
+    bool VehicleDelete(char*name);
+    bool update(char*carname, char* newName);
+    Vehicle& search(char* name);
 };
 
 // =========================
@@ -121,8 +151,9 @@ int main() {
     store.add(new Car("K5", 2018, 2.0, 170));
     store.add(new Truck(5.0, 140, 12.0));
     store.add(new Truck(3.5, 130, 8.5));
+    //store.add(new Bus())  //subcalssing
 
-    store.showAll();   //  동적 바인딩으로 Car::show(), Truck::show()
+    store.showAll();   //  동적 바인딩으로 Car::show(), Truck::show()   //compile타임에 결정됨
     store.printAll();  //  정적 바인딩으로 Vehicle::print()만 호출됨
 
     return 0;
