@@ -11,7 +11,7 @@ protected:
 public:
     Animal(double w, const string& c) : weight(w), color(c) {}
 
-    // 순수 가상 함수
+    // 가상 함수
     virtual void show()const {}
 
     // 가상 소멸자
@@ -49,7 +49,7 @@ public:
         : Cow(w, c, i, o, a), milkProduct(m) {}
 
     void show(){
-        Cow::show();
+        Cow::show();    //코드 재사용
         cout << "Milk Production: " << milkProduct << " liters/day\n";
     }
 };
@@ -76,13 +76,13 @@ public:
 };
 
 // slicing 발생 (subclass 정보 잘림)
-void printByValue(Animal a) {
+void printByValue(Animal a) {       //값 복사로 전달, milkcow, cow부분 짤리면서 animal부분만 
     cout << "\n[SLICED VERSION: Passed by Value]\n";
     a.show();  // always calls Animal's base version (if not abstract)
 }
 
 // slicing 방지 (정상 polymorphism)
-void printByReference(const Animal& a) {
+void printByReference(const Animal& a) {    //참조로 전달하면 객체 복사 없이 객체를 가르킴->파생클래스 정보 유지&슬라이싱 방지
     cout << "\n[POLYMORPHIC VERSION: Passed by Reference]\n";
     a.show();  // virtual dispatch works correctly
 }
@@ -90,7 +90,7 @@ void printByReference(const Animal& a) {
 // Animal 배열 출력
 void showAll(Animal* animals[], int size) {
     for (int i = 0; i < size; ++i) {
-        animals[i]->show();
+        animals[i]->show(); //동적바인딩 //동적바인딩은 포인터: ->show() 으로!  .show()하면 동적바인딩 안됨
         cout << endl;
     }
 }
