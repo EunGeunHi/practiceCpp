@@ -18,6 +18,12 @@ using namespace std;
         4.int remove(string name)
         5.void sort()
 main() 함수에 enum 메뉴로 입출력 구현
+
+
+
+oreder는 has-a (Item,Customer)
+Itme은 is-a (Book,Bag,EBook)
+Customer는 is-a (RegularCustomer, VIPCustomer)
 */
 
 
