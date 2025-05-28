@@ -45,6 +45,15 @@
     <ClCompile Include="chap8\8장_3_클래스타입_변환연산자.cpp" />
     <ClCompile Include="chap8\8장_4_동적바인딩_함수내.cpp" />
     <ClCompile Include="chap8\8장_5_동적바인딩_컨테이너클래스.cpp" />
+    <ClCompile Include="chap8\8장_6_정적바인딩_동적바인딩.cpp" />
+    <ClCompile Include="chap8\8장_7_subclassing_상세화.cpp" />
+    <ClCompile Include="chap8\8장_8_union_동적바인딩.cpp" />
+    <ClCompile Include="chap9\9장_1_객체슬라이싱.cpp" />
+    <ClCompile Include="chap9\9장_2_고객제품주문클래스설계.cpp" />
+    <ClCompile Include="chap9\9장_3_1객체테이블상속.cpp" />
+    <ClCompile Include="chap9\9장_3_객체테이블구현.cpp" />
+    <ClCompile Include="chap9\9장_4_private상속.cpp" />
+    <ClCompile Include="chap9\9장_5_이동생성자.cpp" />
     <ClCompile Include="lab.cpp" />
     <ClCompile Include="lab_1.cpp" />
     <ClCompile Include="lab_2.cpp" />

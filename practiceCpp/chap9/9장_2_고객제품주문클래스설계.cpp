@@ -1,173 +1,201 @@
-/*
-* ✅ 핵심 설계 아이디어
-Vehicle을 순수 가상 함수 virtual void show() const = 0; 포함하는 추상 클래스로 변경
-
-Car, ElectricCar, HybridCar 모두 Vehicle에서 공통 인터페이스를 상속받도록 설정
-
-UsedVehicleStore는 Vehicle* 배열을 사용하여 다형적으로 저장 및 출력
-*
-*/
 #include <iostream>
-#include <cstring>
+#include <string>
+#include <iomanip>
 using namespace std;
 
-// =============================
-// Vehicle 클래스 (추상 클래스)
-// =============================
-class Vehicle {
-private:
-    char* manufacturer;
-    char* model;
-    int madeYear;
-    int price;
-
-public:
-    Vehicle(const char* m = "", const char* md = "", int y = 0, int p = 0)
-        : madeYear(y), price(p) {
-        manufacturer = new char[strlen(m) + 1];
-        strcpy(manufacturer, m);
-        model = new char[strlen(md) + 1];
-        strcpy(model, md);
-    }
-
-    Vehicle(const Vehicle& other)
-        : madeYear(other.madeYear), price(other.price) {
-        manufacturer = new char[strlen(other.manufacturer) + 1];
-        strcpy(manufacturer, other.manufacturer);
-        model = new char[strlen(other.model) + 1];
-        strcpy(model, other.model);
-    }
-
-    virtual ~Vehicle() {
-        delete[] manufacturer;
-        delete[] model;
-    }
-
-    virtual void show() const = 0;
-
+// 추상 클래스 Item
+class Item {
 protected:
-    void showBaseInfo(ostream& os) const {
-        os << manufacturer << " " << model << " (" << madeYear << "), "
-            << price << "만원";
+    string name;
+    double price;
+    int stockQuantity;
+
+public:
+    Item(const string& name, double price, int stock)
+        : name(name), price(price), stockQuantity(stock) {
+    }
+
+    virtual ~Item() {}
+
+    string getName() const { return name; }
+    double getPrice() const { return price; }
+    int getStockQuantity() const { return stockQuantity; }
+
+    void reduceStock(int quantity) {
+        if (stockQuantity >= quantity)
+            stockQuantity -= quantity;
+        else
+            cout << "Insufficient stock for " << name << endl;
+    }
+
+    virtual void show() const {
+        cout << name << " - W" << price << " 재고량: " << stockQuantity;
     }
 };
 
-// =============================
-// Battery 클래스
-// =============================
-class Battery {
-private:
-    int capacity;
-    string mode;
-
+class Electronics : public Item {
+    int madeYear;
 public:
-    Battery(int cap = 0, const string& m = "EV") : capacity(cap), mode(m) {}
-    void showBatteryInfo(ostream& os) const {
-        os << " | Battery: " << capacity << "kWh, Mode: " << mode;
+    Electronics(const string& name, double price, int stock, int year)
+        : Item(name, price, stock), madeYear(year) {
     }
-};
-
-// =============================
-// Car 클래스 (내연기관)
-// =============================
-class Car : public Vehicle {
-private:
-    double engineSize;
-    int speed;
-
-public:
-    Car(const char* m, const char* md, int y, int p, double e, int s)
-        : Vehicle(m, md, y, p), engineSize(e), speed(s) {}
 
     void show() const override {
-        showBaseInfo(cout);
-        cout << " | Engine: " << engineSize << "L, Speed: " << speed << "km/h\n";
+        cout << "전자제품: ";
+        Item::show();
+        cout << " 제조년도: " << madeYear << endl;
     }
 };
 
-// =============================
-// HybridCar 클래스
-// =============================
-class HybridCar : public Vehicle, private Battery {
-private:
-    double engineSize;
-    int speed;
-
+class Clothing : public Item {
+    int size;
 public:
-    HybridCar(const char* m, const char* md, int y, int p,
-        double e, int s, int cap)
-        : Vehicle(m, md, y, p), Battery(cap, "Hybrid"),
-        engineSize(e), speed(s) {}
+    Clothing(const string& name, double price, int stock, int size)
+        : Item(name, price, stock), size(size) {
+    }
 
     void show() const override {
-        showBaseInfo(cout);
-        cout << " | Engine: " << engineSize << "L, Speed: " << speed << "km/h";
-        showBatteryInfo(cout);
-        cout << endl;
+        cout << "의료팩션: ";
+        Item::show();
+        cout << " 치수: " << size << endl;
     }
 };
 
-// =============================
-// ElectricCar 클래스
-// =============================
-class ElectricCar : public Vehicle, private Battery {
+// Discountable 인터페이스
+class Discountable {
 public:
-    ElectricCar(const char* m, const char* md, int y, int p, int cap)
-        : Vehicle(m, md, y, p), Battery(cap, "EV") {}
+    virtual double getDiscountedPrice(double price) const = 0;
+    virtual ~Discountable() {}
+};
 
-    void show() const override {
-        showBaseInfo(cout);
-        showBatteryInfo(cout);
-        cout << endl;
+class SeasonalDiscount : public Discountable {
+    double discountRate;
+public:
+    SeasonalDiscount(double rate = 0.05) : discountRate(rate) {}
+    double getDiscountedPrice(double price) const override {
+        return price * discountRate;
     }
 };
 
-// =============================
-// UsedVehicleStore 클래스
-// =============================
-class UsedVehicleStore {
-private:
-    Vehicle** vehicles;
-    int count;
+// 추상 클래스 Customer
+class Customer {
+protected:
+    string name;
+public:
+    Customer(const string& name) : name(name) {}
+    virtual ~Customer() {}
+
+    string getName() const { return name; }
+    virtual double applyDiscount(double price) const = 0;
+};
+
+class RegularCustomer : public Customer {
+public:
+    RegularCustomer(const string& name) : Customer(name) {}
+    double applyDiscount(double price) const override {
+        return price * 0.03;
+    }
+};
+
+class PremiumCustomer : public Customer {
+public:
+    PremiumCustomer(const string& name) : Customer(name) {}
+    double applyDiscount(double price) const override {
+        return price * 0.10;
+    }
+};
+
+class Order : public SeasonalDiscount {
+    static const int N = 20;
+    Customer* customer;
+    Item* items[N]{};
+    int quantities[N]{};
+    string orderDates[N]{};
+    int count = 0;
 
 public:
-    UsedVehicleStore(int maxSize = 100) {
-        vehicles = new Vehicle * [maxSize];
-        count = 0;
-    }
+    Order(Customer* customer) : customer(customer) {}
 
-    ~UsedVehicleStore() {
-        for (int i = 0; i < count; ++i) {
-            delete vehicles[i];
+    void addItem(Item* item, int quantity, const string& date) {
+        if (count < N) {
+            items[count] = item;
+            quantities[count] = quantity;
+            orderDates[count] = date;
+            item->reduceStock(quantity);
+            ++count;
         }
-        delete[] vehicles;
     }
 
-    void addVehicle(Vehicle* v) {
-        vehicles[count++] = v;
-    }
-
-    void showAll() const {
-        cout << "\n[중고 차량 목록 출력]\n";
+    double calculateTotal() const {
+        double total = 0;
         for (int i = 0; i < count; ++i) {
-            vehicles[i]->show();
+            total += items[i]->getPrice() * quantities[i];
         }
+        return total;
+    }
+
+    void printOrderSummary() const {
+        cout << "\n=== 고객 주문 요약 ===\n";
+        cout << "고객: " << customer->getName() << endl;
+        cout << "주문요약:\n";
+        for (int i = 0; i < count; ++i) {
+            cout << "- " << items[i]->getName() << " x " << quantities[i] << "개: 단가 W" << items[i]->getPrice() << endl;
+        }
+        cout << "할인 미적용 총비용: W" << calculateTotal() << endl;
+    }
+
+    void printDiscountDetails() const {
+        cout << "\n할인 내역:\n";
+        double total = 0;
+        for (int i = 0; i < count; ++i) {
+            double original = items[i]->getPrice();
+            double season = getDiscountedPrice(original);
+            double cust = customer->applyDiscount(original);
+            double finalPrice = original - season - cust;
+            total += finalPrice * quantities[i];
+            cout << fixed << setprecision(2);
+            cout << "- " << items[i]->getName() << ": 원래 가격 W" << original
+                << ", 시즌할인 W" << season
+                << ", 고객할인 W" << cust
+                << ", 할인 후 W" << finalPrice << endl;
+        }
+        cout << "할인된 지불 금액 = W" << total << endl;
     }
 };
 
-// =============================
-// main 함수
-// =============================
+void showItemsStock(Item* items[], int size) {
+    for (int i = 0; i < size; ++i) {
+        items[i]->show();
+    }
+}
+
 int main() {
-    UsedVehicleStore store;
+    Item* items[4] = {
+        new Electronics("노트북", 1500, 100, 2023),
+        new Clothing("티셔츠", 50, 100, 95),
+        new Electronics("휴대폰", 800, 100, 2024),
+        new Clothing("청바지", 80, 100, 90)
+    };
 
-    store.addVehicle(new Car("Kia", "K5", 2019, 2500, 2.0, 180));
-    store.addVehicle(new HybridCar("Toyota", "Prius", 2018, 3500, 1.8, 170, 45));
-    store.addVehicle(new ElectricCar("Tesla", "Model 3", 2022, 5500, 75));
-    store.addVehicle(new HybridCar("Hyundai", "Ioniq Hybrid", 2021, 3300, 1.6, 165, 42));
-    store.addVehicle(new ElectricCar("Hyundai", "Ioniq 6", 2023, 4700, 77));
+    showItemsStock(items, 4);
 
-    store.showAll();
+    RegularCustomer rc("홍길동");
+    PremiumCustomer pc("강감찬");
 
+    Order rOrder(&rc);
+    rOrder.addItem(items[0], 1, "240901");
+    rOrder.addItem(items[1], 2, "240902");
+    rOrder.printOrderSummary();
+    rOrder.printDiscountDetails();
+
+    Order pOrder(&pc);
+    pOrder.addItem(items[1], 1, "240901");
+    pOrder.addItem(items[3], 2, "240903");
+    pOrder.printOrderSummary();
+    pOrder.printDiscountDetails();
+
+    showItemsStock(items, 4);
+
+    for (auto& item : items) delete item;
     return 0;
 }

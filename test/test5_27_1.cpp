@@ -2,6 +2,7 @@
 #include <string>
 #include <iomanip>
 using namespace std;
+#include <algorithm>
 
 /*
 클래스 구현
@@ -118,6 +119,175 @@ public:
         return customer->getName() > other.customer->getName();
     }
 };
+
+// 1. Book 클래스 구현
+class Book : public Item {
+protected:
+    string author;
+    string publisher;
+
+public:
+    Book(const string& name, const string& author, const string& publisher, double price, int stock)
+        : Item(name, price, stock), author(author), publisher(publisher) {
+    }
+
+    void show() const override {
+        Item::show();
+        cout << ", 저자: " << author << ", 출판사: " << publisher;
+    }
+};
+
+// 2. Bag 클래스 구현
+class Bag : public Item {
+protected:
+    string size;
+    string color;
+
+public:
+    Bag(const string& name, const string& size, const string& color, double price, int stock)
+        : Item(name, price, stock), size(size), color(color) {
+    }
+
+    void show() const override {
+        Item::show();
+        cout << ", 크기: " << size << ", 색상: " << color;
+    }
+};
+
+// 3. EBook 클래스 구현
+class EBook : public Book {
+protected:
+    string storageMedium;
+    string capacity;
+
+public:
+    EBook(const string& name, const string& storageMedium, const string& capacity,
+        const string& author, const string& publisher, double price, int stock)
+        : Book(name, author, publisher, price, stock), storageMedium(storageMedium), capacity(capacity) {
+    }
+
+    void show() const override {
+        Book::show();
+        cout << ", 저장매체: " << storageMedium << ", 용량: " << capacity;
+    }
+};
+
+// 4. RegularCustomer 클래스 구현
+class RegularCustomer : public Customer {
+protected:
+    string city;
+    int mileage;
+    const double DISCOUNT_RATE = 0.03; // 3% 할인율
+
+public:
+    RegularCustomer(const string& name, const string& city, int mileage)
+        : Customer(name), city(city), mileage(mileage) {
+    }
+
+    double applyDiscount(double price) const override {
+        return price * DISCOUNT_RATE;
+    }
+};
+
+// 5. VIPCustomer 클래스 구현
+class VIPCustomer : public Customer {
+protected:
+    double discountRate; // 할인율 필드 사용
+
+public:
+    VIPCustomer(const string& name, double discountRate)
+        : Customer(name), discountRate(discountRate) {
+    }
+
+    double applyDiscount(double price) const override {
+        return price * discountRate;
+    }
+};
+
+// 6. OrderTable 클래스 구현
+class OrderTable {
+    static const int MAX_ORDERS = 20;
+    Order* orders[MAX_ORDERS]{};
+    int count = 0;
+
+public:
+    void add(Order* o) {
+        if (count < MAX_ORDERS) {
+            orders[count] = o;
+            ++count;
+        }
+        else {
+            cout << "주문 테이블이 가득 찼습니다. 더 이상 추가할 수 없습니다.\n";
+        }
+    }
+
+    void printAll() const {
+        if (count == 0) {
+            cout << "주문 내역이 없습니다.\n";
+            return;
+        }
+        for (int i = 0; i < count; ++i) {
+            orders[i]->printOrderSummary();
+        }
+    }
+
+    Order* search(string name) const {
+        for (int i = 0; i < count; ++i) {
+            if (orders[i]->matchCustomer(name)) {
+                return orders[i];
+            }
+        }
+        return nullptr;
+    }
+
+    int remove(string name) {
+        int removedCount = 0;
+        // 삭제된 요소를 채우기 위해 왼쪽으로 요소들을 이동시킵니다.
+        for (int i = 0; i < count; ) {
+            if (orders[i]->matchCustomer(name)) {
+                // 관련 고객 객체 삭제
+                // Order 객체가 Customer 객체를 독점적으로 소유하고 있다고 가정합니다.
+                // 만약 Customer 객체가 여러 Order에 의해 공유될 수 있다면,
+                // 여기서는 Customer를 삭제해서는 안 됩니다.
+                //delete orders[i]->customer; // 고객 객체 삭제
+                // Order 객체 자체 삭제
+                delete orders[i];
+                for (int j = i; j < count - 1; ++j) {
+                    orders[j] = orders[j + 1];
+                }
+                orders[count - 1] = nullptr; // 마지막 포인터 초기화
+                --count;
+                ++removedCount;
+            }
+            else {
+                ++i;
+            }
+        }
+        return removedCount;
+    }
+
+    void sort() {
+        // 고객 이름으로 정렬합니다. std::sort를 사용하여 효율적으로 구현합니다.
+        std::sort(orders, orders + count, [](Order* a, Order* b) {
+            return a->getCustomerName() < b->getCustomerName();
+            });
+    }
+
+    // 동적으로 할당된 Order 객체를 정리하기 위한 소멸자
+    ~OrderTable() {
+        for (int i = 0; i < count; ++i) {
+            // Order 객체를 삭제합니다.
+            // 참고: Customer와 Item은 OrderTable 외부에서 생성되므로,
+            // Order가 독점적으로 소유하지 않는다면 main에서 삭제 책임을 집니다.
+            // 현재 remove 함수는 Order 삭제 시 Customer도 삭제합니다.
+            delete orders[i];
+        }
+    }
+};
+
+
+
+
 enum Menu { INPUT = 1, PRINT, SEARCH, DELETE, SORT, EXIT };
 
 int main() {

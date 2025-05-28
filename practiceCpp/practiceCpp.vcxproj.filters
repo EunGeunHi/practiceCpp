@@ -82,6 +82,12 @@
     <Filter Include="소스 파일\test4\week11_1">
       <UniqueIdentifier>{bde4eb96-2e09-4a10-963c-f2df71408d8a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\test4\week12_1">
+      <UniqueIdentifier>{5db9ac48-fcdf-4311-9d51-00774d15f7be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\test4\week12_2">
+      <UniqueIdentifier>{6ae4522c-cc97-4986-913b-4123671559dd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="week1\Chapter1_basic1\train_실습1_2정수배열정렬삽입.cpp">
@@ -410,6 +416,33 @@
     </ClCompile>
     <ClCompile Include="chap8\8장_5_동적바인딩_컨테이너클래스.cpp">
       <Filter>소스 파일\test4\week11_1</Filter>
+    </ClCompile>
+    <ClCompile Include="chap8\8장_6_정적바인딩_동적바인딩.cpp">
+      <Filter>소스 파일\test4\week12_1</Filter>
+    </ClCompile>
+    <ClCompile Include="chap8\8장_7_subclassing_상세화.cpp">
+      <Filter>소스 파일\test4\week12_1</Filter>
+    </ClCompile>
+    <ClCompile Include="chap8\8장_8_union_동적바인딩.cpp">
+      <Filter>소스 파일\test4\week12_1</Filter>
+    </ClCompile>
+    <ClCompile Include="chap9\9장_1_객체슬라이싱.cpp">
+      <Filter>소스 파일\test4\week12_1</Filter>
+    </ClCompile>
+    <ClCompile Include="chap9\9장_2_고객제품주문클래스설계.cpp">
+      <Filter>소스 파일\test4\week12_2</Filter>
+    </ClCompile>
+    <ClCompile Include="chap9\9장_3_1객체테이블상속.cpp">
+      <Filter>소스 파일\test4\week12_2</Filter>
+    </ClCompile>
+    <ClCompile Include="chap9\9장_3_객체테이블구현.cpp">
+      <Filter>소스 파일\test4\week12_2</Filter>
+    </ClCompile>
+    <ClCompile Include="chap9\9장_4_private상속.cpp">
+      <Filter>소스 파일\test4\week12_2</Filter>
+    </ClCompile>
+    <ClCompile Include="chap9\9장_5_이동생성자.cpp">
+      <Filter>소스 파일\test4\week12_2</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

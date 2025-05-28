@@ -27,5 +27,11 @@
     <ClCompile Include="6장1.cpp">
       <Filter>소스 파일\6장</Filter>
     </ClCompile>
+    <ClCompile Include="test5_27.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="test5_27_1.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
