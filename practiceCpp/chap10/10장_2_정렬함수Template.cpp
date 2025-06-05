@@ -3,12 +3,15 @@
 using namespace std;
 
 // 템플릿 swap 함수 (배열 내 특정 인덱스 i, j 교환)
-template <typename T>
+template <typename T>   //  함수:function()    template<>  파라미터:T, typename: < >  템플릿 변수 선언은 다음줄에만 적용
 void swapElements(T data[], int i, int j) {
     T temp = data[i];
     data[i] = data[j];
     data[j] = temp;
 }
+//template코드 는 직접 컴파일되진 않음-> class같은 느낌
+//      type체크후 그 type에 맞는 instance코드(type에 따른 코드)가 컴파일됨 :instantiation
+
 
 // 템플릿 버전 버블 정렬
 template <typename T>
@@ -35,13 +38,13 @@ int main() {
     int nSize = sizeof(nums) / sizeof(nums[0]);
     int fSize = sizeof(floats) / sizeof(floats[0]);
     int sSize = sizeof(words) / sizeof(words[0]);
-
+    //정수
     sort(nums, nSize);
     show(nums, nSize);
-
+    //실수
     sort(floats, fSize);
     show(floats, fSize);
-
+    //스트링
     sort(words, sSize);
     show(words, sSize);
 

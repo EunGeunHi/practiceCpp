@@ -97,7 +97,7 @@ public:
     }
     bool operator>(const Vehicle& other) const override {
         if (model == other.getModel()) {
-            const Car* pCar = dynamic_cast<const Car*>(&other);
+            const Car* pCar = dynamic_cast<const Car*>(&other); //const Car* pCar = other;과 차이
             return pCar ? year > pCar->year : false;
         }
         return model > other.getModel();
@@ -157,6 +157,10 @@ public:
     Dog(string n, int a) : Animal(n), age(a) {}
     void show() const override {
         cout << "🐶 Dog: " << name << ", Age: " << age << endl;
+        /*
+        Animal::show();
+        cout<<",Age: "<<age<<endl;
+        */
     }
     bool operator>(const Animal& other) const override {
         if (name == other.getName()) {

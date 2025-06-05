@@ -60,12 +60,17 @@ void showString(string arr[], int size) {
     cout << endl;
 }
 
+/*
+=> 타입별로 비슷한 함수 여러개 구현해야함
+*/
+
 int main() {
     int nums[] = { 5, 1, 4, 2, 9, 6,3};
     double floats[] = { 3.14, 1.41, 2.71 };
     string words[] = { "banana", "apple", "cherry", "melon", "kiwi"};
 
     int nSize = sizeof(nums) / sizeof(nums[0]);
+    //int nSize = 7; // !!hard coding
     int fSize = sizeof(floats) / sizeof(floats[0]);
     int sSize = sizeof(words) / sizeof(words[0]);
 
