@@ -82,10 +82,10 @@ public:
 template <typename T>
 class ObjectTable {
 private:
-    vector<T*> data;
+    vector<T*> data;    // T*data[Max];에서 STL로
 public:
     ~ObjectTable() {
-        for (auto p : data) delete p;
+        for (auto p : data) delete p;   //확장형 for문
     }
     void add(T* obj) { data.push_back(obj); }
     void showAll() const {

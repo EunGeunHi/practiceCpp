@@ -49,7 +49,7 @@ public:
 
     int search(T* target) {
         for (int i = 0; i < size; i++)
-            if (*data[i] == *target)
+            if (*data[i] == *target)    // == override 필요 
                 return i;
         return -1;
     }
@@ -57,7 +57,7 @@ public:
     void sort() {
         for (int i = 0; i < size - 1; i++)
             for (int j = i + 1; j < size; j++)
-                if (*data[i] > *data[j])
+                if (*data[i] > *data[j])    // > override 필요
                     swap(data[i], data[j]);
     }
 
