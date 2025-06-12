@@ -8,6 +8,7 @@ using namespace std;
 class TableOverflow {
 public:
     string what() const { return "오버플로우: 더 이상 객체를 추가할 수 없습니다."; }
+    //what() 예외클래스의 멤버함수
 };
 
 class TableUnderflow {
@@ -88,6 +89,9 @@ int main() {
         table.add(new Person("오버", 99)); // 오버플로우
     }
     catch (TableOverflow& e) {
+        cout << "[예외 처리] " << e.what() << endl;
+    }
+    catch (TableUnderflow& e) {//catch 여러개 가능
         cout << "[예외 처리] " << e.what() << endl;
     }
 

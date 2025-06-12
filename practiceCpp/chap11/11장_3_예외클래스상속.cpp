@@ -6,13 +6,17 @@ using namespace std;
 // ==============================
 // std::runtime_error 기반 예외 클래스 정의
 // ==============================
-class TableOverflow : public std::runtime_error {
+class TableOverflow : public std::runtime_error {//stl 제공 예외객체를 상속
     int code;  // 상세 오류 코드
 public:
-    TableOverflow(int code, const string& message)
+    TableOverflow(int code, const string& message) // message는  std::runtime_error의 멤버 변수
         : std::runtime_error(message), code(code) {}
 
     int getCode() const noexcept { return code; }
+    // void what(const string& message) override {
+    //     runtime_error::what(message);
+    //     cout << "오버플로우";
+    // }
 };
 
 class TableUnderflow : public std::runtime_error {
@@ -98,7 +102,7 @@ int main() {
     }
     catch (const TableOverflow& e) {
         cerr << "[예외 처리] 코드: " << e.getCode() << ", 메시지: " << e.what() << endl;
-    }
+    }   //e.getCode()는 상속받는 예외객체[TableOverflow]의 멤버 함수, e.what()은 상속하는 base 예외객체[std::runtime_error]의 멤버함수
 
     try {
         table.show();

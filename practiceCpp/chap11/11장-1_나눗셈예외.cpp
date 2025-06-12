@@ -12,6 +12,7 @@ double divide (int num1, int num2){
        // assert(num1 != 0);
 		//abort();//abnormal program termination
 		//exit(0);
+        //위의 주석은 c의 기능 
 		throw("분자 = 0");
 	else
 		return static_cast<double>(num1) / num2;
@@ -28,7 +29,7 @@ void main ( ){
     catch (const char * text){
         cout << "ERROR: " << text << endl ;
     }
-    catch (...) {
+    catch (...) {//모든 타입 throw받음
         cout << "[알 수 없는 예외] 처리됨" << endl;
     }
     cout << "프로그램 정상 종료" << endl;

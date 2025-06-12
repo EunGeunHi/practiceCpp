@@ -29,8 +29,8 @@ void showVehicle() {
 
     throw runtime_error("showVehicle에서 예외 발생!");
 
-    delete v;  // 이 줄은 실행되지 않음!
-}
+    delete v;  // 이 줄은 실행되지 않음!: 소멸자 호출 안됨
+}//포인터 v는 반환하지만 new메모리 할당된 v*는 반환되지 않았음-> 힙에 남아 있
 
 void showAnimal() {
     Animal* a = new Animal();  // 동적 생성
@@ -62,3 +62,13 @@ int main() {
     cout << "[main] 종료" << endl;
     return 0;
 }
+
+//해결법: 스마트 포인터
+/*
+Vehicle* v = new Vehicle();
+수동으로 할당, 해제
+=>
+unique_ptr<Vehicle> v = make_unique<Vehicle>();
+1.v가 스코프 벗어나면 자동으로 delete
+2.단독 소유(하나의 포인터만 개체를 소유)
+*/
