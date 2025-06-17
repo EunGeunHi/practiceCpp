@@ -193,7 +193,7 @@ int main() {
 }
 
 //직원-(판매원,사무원) 상속해서 vector<T>data에 상속 객체 넣기
-//예외 클래스 overflow underflow 상속해서 errorcode + msg
+//예외 클래스 overflow underflow 상속해서 errorcode + msg -> 수업 내용 참고
 //람다식으로 Comparator 객체 만들어서 적용
 
 /*
