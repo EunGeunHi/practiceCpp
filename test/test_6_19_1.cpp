@@ -172,7 +172,7 @@ int main() {
  -void swapElements(T data[], int i, int j)
 
   Comparator 구조체 구현
-    각 구조체는 bool operator()(const T&am const T&b){}을 제공해야함
+    각 구조체는 bool operator()(const T&a, const T&b){}을 제공해야함
  -CompareByEname 직원 이름 오른차순
  -CompareByCity 직원 도시 오른차순
  -CompareByPname 제품 이름 오른차순
