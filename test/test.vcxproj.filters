@@ -19,6 +19,9 @@
     <Filter Include="소스 파일\8장">
       <UniqueIdentifier>{a45cb50c-7cb7-48e9-90b9-41ea5a2486e4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\final">
+      <UniqueIdentifier>{d92ce240-66ab-4a29-98b9-21067e615689}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="test.cpp">
@@ -32,6 +35,18 @@
     </ClCompile>
     <ClCompile Include="test5_27_1.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="test_6_19_1.cpp">
+      <Filter>소스 파일\final</Filter>
+    </ClCompile>
+    <ClCompile Include="test_6_19_2.cpp">
+      <Filter>소스 파일\final</Filter>
+    </ClCompile>
+    <ClCompile Include="test_6_19_3.cpp">
+      <Filter>소스 파일\final</Filter>
+    </ClCompile>
+    <ClCompile Include="test_6_19_4.cpp">
+      <Filter>소스 파일\final</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

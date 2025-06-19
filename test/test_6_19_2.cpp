@@ -2,6 +2,8 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <functional> // std::function을 위해 필요
+
 using namespace std;
 
 // ===========================
@@ -14,11 +16,13 @@ class Employee {
 
 public:
     Employee(string eno = "", string ename = "", string city = "")
-        : eno(eno), ename(ename), city(city) {}
+        : eno(eno), ename(ename), city(city) {
+    }
 
     string getEno() const { return eno; }
     string getEname() const { return ename; }
     string getCity() const { return city; }
+
 
     void show() const {
         cout << "[" << eno << "] " << ename << " (" << city << ")\n";
@@ -35,7 +39,8 @@ class Product {
 
 public:
     Product(string pname = "", string color = "", string company = "")
-        : pname(pname), color(color), company(company) {}
+        : pname(pname), color(color), company(company) {
+    }
 
     string getPname() const { return pname; }
     string getColor() const { return color; }
@@ -54,8 +59,26 @@ class ObjectTable {
 private:
     vector<T> data;
 public:
-
+    void add(const T& obj) {
+        data.push_back(obj);
+    }
+    void showAll() const {
+        for (auto e : data) {
+            e.show();
+        }
+        cout << endl;
+    }
+    void sort(function <bool(const T&, const T&)>comp) {
+        std::sort(data.begin(), data.end(), comp);
+    }
 };
+
+template<>
+void ObjectTable<Employee>::showAll() const {
+    for (auto e : data)
+        e.show();
+    cout << "총 " << data.size() << "명\n";
+}
 
 // ===========================
 // 메뉴 정의

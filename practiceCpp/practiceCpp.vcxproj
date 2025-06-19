@@ -19,6 +19,22 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="chap10\10장_1_정렬함수.cpp" />
+    <ClCompile Include="chap10\10장_2_정렬함수Template.cpp" />
+    <ClCompile Include="chap10\10장_3_객체정렬함수.cpp" />
+    <ClCompile Include="chap10\10장_4객체Comparator정렬.cpp" />
+    <ClCompile Include="chap10\10장_5_컨테이너template.cpp" />
+    <ClCompile Include="chap10\10장_6_main.cpp" />
+    <ClCompile Include="chap10\10장_6_template멤버함수분리정의.cpp" />
+    <ClCompile Include="chap10\10장_7_ObjectTable.cpp" />
+    <ClCompile Include="chap10\10장_8_template_specialization.cpp" />
+    <ClCompile Include="chap10\10장_9_STL기반테이블.cpp" />
+    <ClCompile Include="chap11\11장-1_나눗셈예외.cpp" />
+    <ClCompile Include="chap11\11장-2_객체throw.cpp" />
+    <ClCompile Include="chap11\11장_3_예외클래스상속.cpp" />
+    <ClCompile Include="chap11\11장_4_stack_unwinding.cpp" />
+    <ClCompile Include="chap11\11장_5_stack_unwinding_new객체.cpp" />
+    <ClCompile Include="chap11\11징_6_생성자예외correct.cpp" />
     <ClCompile Include="chap6\6장_10_assign_shallowcopy.cpp" />
     <ClCompile Include="chap6\6장_11_타입변환연산자.cpp" />
     <ClCompile Include="chap6\6장_12_함수전달_복사생성자.cpp" />
@@ -137,6 +153,10 @@
     <ClCompile Include="실습_3장_1.cpp" />
     <ClCompile Include="실습_3장_2.cpp" />
     <ClCompile Include="실습_3장_4.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="chap10\10장_6_objectTable.h" />
+    <ClInclude Include="chap10\10장_6_객체 테이블.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

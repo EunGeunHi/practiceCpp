@@ -12,11 +12,21 @@ class Employee {
 
 public:
     Employee(string eno = "", string ename = "", string city = "")
-        : eno(eno), ename(ename), city(city) {}
+        : eno(eno), ename(ename), city(city) {
+    }
 
     string getEno() const { return eno; }
     string getEname() const { return ename; }
     string getCity() const { return city; }
+
+    bool operator>(Employee& other) {
+        if (this->eno != other.eno)
+            return this->eno > other.eno;
+        else if (this->ename != other.ename)
+            return this->ename > other.ename;
+        else
+            return this->city > other.city;
+    }
 
     friend ostream& operator<<(ostream& os, const Employee& e) {
         os << "[" << e.eno << "] " << e.ename << " (" << e.city << ")";
@@ -34,7 +44,8 @@ class Product {
 
 public:
     Product(string pname = "", string color = "", string company = "")
-        : pname(pname), color(color), company(company) {}
+        : pname(pname), color(color), company(company) {
+    }
 
     string getPname() const { return pname; }
     string getColor() const { return color; }
@@ -49,14 +60,64 @@ public:
 // =================================
 // Comparator 구조체 정의
 // =================================
+struct CompareByEmployee {
+    bool operator()(const Employee& a, const Employee& b) {
+        return &a > &b;
+    }
+};
+struct CompareByEname {
+    bool operator()(const Employee& a, const Employee& b) {
+        return a.getEname() > b.getEname();
+    }
+};
+struct CompareByCity {
+    bool operator()(const Employee& a, const Employee& b) {
+        return a.getCity() > b.getCity();
+    }
+};
+struct CompareByPname {
+    bool operator()(const Product& a, const Product& b) {
+        return a.getPname() > b.getPname();
+    }
+};;
+struct CompareByColor {
+    bool operator()(const Product& a, const Product b) {
+        return a.getColor() > b.getColor();
+    }
+};
 
 
 // =================================
 // 템플릿 swap, sort, show 함수
 // =================================
+template <typename T>
+void swapE(T data[], int i, int j) {
+    T temp = data[i];
+    data[i] = data[j];
+    data[j] = temp;
+}
 
+template<typename T, typename Comparator>
+void sort(T data[], int size, Comparator comp) {
+    for (int i = 0; i < size; ++i)
+        for (int j = i + 1; j < size; ++j)
+            if (comp(data[i], data[j]))
+                swapE(data, i, j);
+}
 
+template<typename T>
+void show(T data[], int size) {
+    for (int i = 0; i < size; ++i) {
+        cout << data[i] << endl;
+    }
+}
 
+template <>
+void show(Employee data[], int size) {
+    for (int i = 0; i < size; ++i)
+        cout << data[i] << endl;
+    cout << "총 " << size << "명" << endl;
+}
 
 
 
@@ -70,8 +131,10 @@ enum Menu {
     SORT_CITY,
     SORT_PNAME,
     SORT_COLOR,
-    EXIT
+    EXIT,
+    TEST
 };
+
 
 // =================================
 // main 함수
@@ -138,6 +201,12 @@ int main() {
         case EXIT:
             cout << "프로그램을 종료합니다.\n";
             return 0;
+        case TEST:
+            cout << "[Employee 테이블의 operator> 정렬 결과]\n";
+            sort(emp_list, emp_size, CompareByEmployee());
+            show(emp_list, emp_size);
+            break;
+            return 0;
         default:
             cout << "잘못된 선택입니다. 다시 입력하세요.\n";
         }
@@ -161,7 +230,7 @@ int main() {
     접근자: getPname(),getColor(),getCompany()
     operator<< :오버로딩을 통해 출력
       자동차 [고동색] (기아차)
- 
+
  템플릿 함수 구현
  -void show(T arr[],int size)
    모든 객체를 cout으로 출력
@@ -177,7 +246,7 @@ int main() {
  -CompareByCity 직원 도시 오른차순
  -CompareByPname 제품 이름 오른차순
  -CompareByColor 제품 색 오른차순
-  
+
 */
 
 

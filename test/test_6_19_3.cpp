@@ -3,6 +3,7 @@
 #include <vector>
 #include <algorithm>
 #include <stdexcept>
+#include <functional>
 using namespace std;
 
 // ===========================
@@ -22,7 +23,8 @@ class Employee {
     string eno, ename, city;
 public:
     Employee(string eno = "", string ename = "", string city = "")
-        : eno(eno), ename(ename), city(city) {}
+        : eno(eno), ename(ename), city(city) {
+    }
 
     string getEno() const { return eno; }
     string getEname() const { return ename; }
@@ -40,7 +42,8 @@ class Product {
     string pname, color, company;
 public:
     Product(string pname = "", string color = "", string company = "")
-        : pname(pname), color(color), company(company) {}
+        : pname(pname), color(color), company(company) {
+    }
 
     string getPname() const { return pname; }
     string getColor() const { return color; }
@@ -59,6 +62,23 @@ class ObjectTable {
     vector<T> data;
     const size_t MAX_SIZE = 6;
 public:
+    void add(const T& e, int errCode) {
+        if (data.size() >= MAX_SIZE) throw TableException(errCode, "오버플로우 예외 발생");
+        data.push_back(e);
+    }
+    void remove(int qty, int errCode) {
+        if (data.size() < qty) throw TableException(errCode, "언더플로우 예외 발생");
+        for (int i = 0; i < qty; ++i)
+            data.pop_back();
+    }
+
+    void sort(function<bool(const T&, const T&)>comp) {
+        std::sort(data.begin(), data.end(), comp);
+    }
+
+    void showAll() {
+        for (auto e : data) e.show();
+    }
 
     size_t size() const { return data.size(); }
 };
@@ -66,7 +86,10 @@ public:
 // ===========================
 // ObjectTable<Employee> 특수화 showAll()
 // ===========================
-
+void ObjectTable<Employee>::showAll() {
+    for (auto e : data) e.show();
+    cout << "총 제품 수: " << data.size() << "개\n";
+}
 // ===========================
 // ObjectTable<Product> 특수화 showAll()
 // ===========================
@@ -206,7 +229,7 @@ int main() {
  *code:에러 코드
  *what()으로 메시지 리턴
  *throw TableException(1001,"용량 초과로 객체 추가 불가");
- 
+
  *ObjectTable<T>구현
 void add(conmst T& obj, int errCode)
  MAX_SIEZ초과시 Table Exception "오버플로우 예외 발생"
@@ -214,7 +237,7 @@ void remove()
  현재 요소 수보다 큰 수 삭제 요청시 err "언더플로우 예외 발생"
 void sort(function< boll(constT&, constT&)>f)
  람다식 기준 정렬
- 
+
  *showAll()함수 특수화
  모든 Employee 객체 출력 show()사용
  마지막줄에 '총직원수: n명'추가
@@ -340,7 +363,7 @@ void sort(function< boll(constT&, constT&)>f)
 11. 종료
 선택:8
 제품명: 라디오
-제품색상 입력: 회색 
+제품색상 입력: 회색
 제조회사명: 소니
 [예외 발생: 코드 1002]  오버플로우 예외 발생
 
@@ -374,5 +397,5 @@ void sort(function< boll(constT&, constT&)>f)
 9. 직원 삭제 10. 제품 삭제
 11. 종료
 선택: 11
- 
+
  */

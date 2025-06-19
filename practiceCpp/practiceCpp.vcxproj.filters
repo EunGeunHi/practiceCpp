@@ -88,6 +88,9 @@
     <Filter Include="소스 파일\test4\week12_2">
       <UniqueIdentifier>{6ae4522c-cc97-4986-913b-4123671559dd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\test5">
+      <UniqueIdentifier>{91acef13-9e96-4fb8-b39b-7fa7e3ac7a09}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="week1\Chapter1_basic1\train_실습1_2정수배열정렬삽입.cpp">
@@ -444,5 +447,61 @@
     <ClCompile Include="chap9\9장_5_이동생성자.cpp">
       <Filter>소스 파일\test4\week12_2</Filter>
     </ClCompile>
+    <ClCompile Include="chap10\10장_1_정렬함수.cpp">
+      <Filter>소스 파일\test5</Filter>
+    </ClCompile>
+    <ClCompile Include="chap10\10장_2_정렬함수Template.cpp">
+      <Filter>소스 파일\test5</Filter>
+    </ClCompile>
+    <ClCompile Include="chap10\10장_3_객체정렬함수.cpp">
+      <Filter>소스 파일\test5</Filter>
+    </ClCompile>
+    <ClCompile Include="chap10\10장_4객체Comparator정렬.cpp">
+      <Filter>소스 파일\test5</Filter>
+    </ClCompile>
+    <ClCompile Include="chap10\10장_5_컨테이너template.cpp">
+      <Filter>소스 파일\test5</Filter>
+    </ClCompile>
+    <ClCompile Include="chap10\10장_6_main.cpp">
+      <Filter>소스 파일\test5</Filter>
+    </ClCompile>
+    <ClCompile Include="chap10\10장_6_template멤버함수분리정의.cpp">
+      <Filter>소스 파일\test5</Filter>
+    </ClCompile>
+    <ClCompile Include="chap10\10장_7_ObjectTable.cpp">
+      <Filter>소스 파일\test5</Filter>
+    </ClCompile>
+    <ClCompile Include="chap10\10장_8_template_specialization.cpp">
+      <Filter>소스 파일\test5</Filter>
+    </ClCompile>
+    <ClCompile Include="chap10\10장_9_STL기반테이블.cpp">
+      <Filter>소스 파일\test5</Filter>
+    </ClCompile>
+    <ClCompile Include="chap11\11장_3_예외클래스상속.cpp">
+      <Filter>소스 파일\test5</Filter>
+    </ClCompile>
+    <ClCompile Include="chap11\11장_4_stack_unwinding.cpp">
+      <Filter>소스 파일\test5</Filter>
+    </ClCompile>
+    <ClCompile Include="chap11\11장_5_stack_unwinding_new객체.cpp">
+      <Filter>소스 파일\test5</Filter>
+    </ClCompile>
+    <ClCompile Include="chap11\11장-1_나눗셈예외.cpp">
+      <Filter>소스 파일\test5</Filter>
+    </ClCompile>
+    <ClCompile Include="chap11\11장-2_객체throw.cpp">
+      <Filter>소스 파일\test5</Filter>
+    </ClCompile>
+    <ClCompile Include="chap11\11징_6_생성자예외correct.cpp">
+      <Filter>소스 파일\test5</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="chap10\10장_6_objectTable.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="chap10\10장_6_객체 테이블.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
